@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mockup Portfolio Livre Interactif</title>
+    <style>
+        :root {
+            --fond-principal: rgba(255, 255, 255, 1);
+            --fond-secondaire: rgba(245, 245, 245, 1);
+            --texte-principal: rgba(33, 33, 33, 0.9);
+            --texte-secondaire: rgba(100, 100, 100, 0.7);
+            --couleur-principale: rgba(52, 152, 219, 1);
+            --couleur-primaire-claire: rgba(52, 152, 219, 0.1);
+            --couleur-secondaire: rgba(231, 76, 60, 1);
+            --gris-clair: rgba(200, 200, 200, 1);
+            --ombre-legere: rgba(0, 0, 0, 0.1);
+            --couleur-survol: rgba(41, 128, 185, 1);
+            --couleur-soulignement: rgba(52, 152, 219, 0.6);
+            --menu-fond: rgba(33, 33, 33, 0.95);
+            --menu-texte: rgba(255, 255, 255, 0.9);
+            --menu-texte-actif: rgba(52, 152, 219, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--fond-principal);
+            color: var(--texte-principal);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Conteneur global pour gérer le layout vertical */
+        .page-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: calc(100% - 280px);
+            margin-right: 280px;
+            /* espace pour menu fixe à droite */
+        }
+
+        /* Menu horizontal principal en haut */
+        header.main-nav {
+            background-color: var(--fond-secondaire);
+            box-shadow: 0 2px 4px var(--ombre-legere);
+        }
+
+        header.main-nav nav {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header.main-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0.6em 1em;
+        }
+
+        header.main-nav li {
+            margin-right: 2em;
+        }
+
+        header.main-nav a {
+            color: var(--couleur-principale);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.3em 0.2em;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+
+        header.main-nav a:hover,
+        header.main-nav a.active {
+            color: var(--couleur-survol);
+            border-bottom-color: var(--couleur-principale);
+        }
+
+        /* Zone de contenu principale */
+        main.content {
+            flex-grow: 1;
+            padding: 3em 4em 3em 4em;
+            overflow-y: auto;
+        }
+
+        /* Carrousel simple (page active et navigation) */
+        .carrousel {
+            background-color: var(--fond-secondaire);
+            border-radius: 10px;
+            padding: 2em;
+            box-shadow: 0 2px 8px var(--ombre-legere);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .carrousel h1 {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        .carrousel p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: var(--texte-principal);
+        }
+
+        /* Boutons navigation carrousel */
+        .carrousel .nav-btn {
+            position: absolute;
+            top: 98%;
+            transform: translateY(-50%);
+            background-color: var(--couleur-principale);
+            border: none;
+            color: white;
+            padding: 0.8em 1.2em;
+            font-size: 1.3em;
+            cursor: pointer;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px var(--ombre-legere);
+            transition: background-color 0.3s ease;
+        }
+
+        .carrousel .nav-btn:hover {
+            background-color: var(--couleur-survol);
+        }
+
+        .carrousel .prev {
+            left: 1em;
+        }
+
+        .carrousel .next {
+            right: 1em;
+        }
+
+        /* Menu fixe à droite */
+        nav.menu {
+            position: fixed;
+            top: 0;
+            /*  right: 0; */
+            width: 280px;
+            height: 100vh;
+            background-color: var(--menu-fond);
+            color: var(--menu-texte);
+            padding: 2em 1.5em;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -4px 0 8px var(--ombre-legere);
+        }
+
+        nav.menu h2 {
+            margin-top: 0;
+            font-size: 1.4em;
+            margin-bottom: 1em;
+        }
+
+        nav.menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        nav.menu ul li {
+            margin-bottom: 1.1em;
+        }
+
+        nav.menu ul li a {
+            color: var(--menu-texte);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            padding: 0.3em 0.2em;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav.menu ul li a:hover {
+            color: var(--couleur-principale);
+            border-left-color: var(--couleur-principale);
+        }
+
+        nav.menu ul li a.active {
+            color: var(--menu-texte-actif);
+            border-left-color: var(--menu-texte-actif);
+            font-weight: 700;
+        }
+
+        /* Sommaire dynamique en haut à droite */
+        .sommaire {
+            position: fixed;
+            top: 3.8em;
+            /* en dessous du menu horizontal */
+            right: 300px;
+            /* Laisser place au menu fixe à droite */
+            background-color: var(--fond-secondaire);
+            padding: 0.8em 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--ombre-legere);
+            font-size: 0.9em;
+            max-width: 250px;
+        }
+
+        .sommaire strong {
+            color: var(--couleur-principale);
+        }
+
+        .sommaire ul {
+            margin: 0.4em 0 0 1em;
+            padding: 0;
+            list-style: disc;
+            color: var(--texte-secondaire);
+        }
+
+        /* Responsive basique */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .page-wrapper {
+                margin-right: 0;
+                max-width: 100%;
+            }
+
+            nav.menu {
+                position: relative;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                padding: 1em;
+                box-shadow: none;
+                overflow-x: auto;
+            }
+
+            nav.menu ul {
+                flex-direction: row;
+                display: flex;
+                gap: 1.2em;
+                flex-grow: 0;
+            }
+
+            nav.menu ul li {
+                margin-bottom: 0;
+            }
+
+            .sommaire {
+                position: static;
+                margin: 1em;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <header class="main-nav" role="banner">
+            <nav role="navigation" aria-label="Menu principal horizontal">
+                <ul>
+                    <li><a href="#" class="active">Accueil</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Compétences</a></li>
+                    <li><a href="#">Projets</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content" role="main">
+            <div class="carrousel">
+                <h1>Bienvenue dans mon portfolio interactif</h1>
+                <p>Découvrez mon parcours, mes compétences et mes projets à travers une navigation fluide et intuitive,
+                    comme un livre.</p>
+                <p>Découvrez mon parcours, mes compétences et mes projets à travers une navigation fluide et intuitive,
+                    comme un livre.</p>
+                <p>Découvrez mon parcours, mes compétences et mes projets à travers une navigation fluide et intuitive,
+                    comme un livre.</p>
+                <p>Découvrez mon parcours, mes compétences et mes projets à travers une navigation fluide et intuitive,
+                    comme un livre.</p>
+                <p>Découvrez mon parcours, mes compétences et mes projets à travers une navigation fluide et intuitive,
+                    comme un livre.</p>
+                <button class="nav-btn prev" aria-label="Page précédente">←</button>
+                <button class="nav-btn next" aria-label="Page suivante">→</button>
+            </div>
+        </main>
+    </div>
+
+    <nav class="menu" aria-label="Menu de navigation fixe à droite">
+        <h2>Ce que je veux montrer</h2>
+        <ul>
+            <li><a href="#" class="active">Description de moi</a></li>
+            <li><a href="#">Mon CV</a></li>
+            <li><a href="#">Ma lettre de motivation</a></li>
+            <li><a href="#">Mes plus beaux projets</a></li>
+            <li><a href="#">Le métier en 2025</a></li>
+            <li><a href="#">Les IA et outils dev</a></li>
+            <li><a href="#">Pourquoi je suis passionné</a></li>
+            <li><a href="#">Ce que je souhaite apporter</a></li>
+        </ul>
+    </nav>
+
+    <div class="sommaire" aria-label="Sommaire dynamique">
+        <strong>Sommaire</strong>
+        <ul>
+            <li><a href="#">Introduction</a></li>
+            <li><a href="#">Compétences clés</a></li>
+            <li><a href="#">Projets phares</a></li>
+            <li><a href="#">Technologies</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

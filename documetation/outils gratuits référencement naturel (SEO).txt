@@ -1,0 +1,102 @@
+Absolument ! Il existe plusieurs outils gratuits (ou freemium) 
+pour vérifier et améliorer le référencement naturel (SEO) de ton site CV. 
+Voici une sélection des meilleurs outils gratuits pour analyser ton référencement :
+
+
+🔍 1. Google Search Console (incontournable)
+📌 https://search.google.com/search-console
+
+✅ Te permet de :
+
+Vérifier que ton site est bien indexé par Google
+
+Voir les mots-clés sur lesquels tu es visible
+
+Identifier les erreurs d’exploration (404, mobile, etc.)
+
+Suivre ton trafic SEO (clics, impressions, position)
+
+💡 Gratuit, mais il faut un domaine en ligne (ou sur GitHub Pages) pour l’utiliser.
+
+------------------------------------------------------------------------------------------------
+
+🛠️ 2. Google PageSpeed Insights
+📌 https://pagespeed.web.dev
+
+✅ Analyse les performances techniques de ton site :
+
+Vitesse de chargement (mobile et desktop)
+
+Recommandations techniques (optimisation des images, JS, etc.)
+
+Impact sur ton référencement (SEO technique)
+
+💡 Très utile pour ton CV en ligne, surtout si tu veux que ça charge vite sur mobile.
+
+------------------------------------------------------------------------------------------------
+
+🧠 3. SEOQuake (extension navigateur)
+📌 https://seoquake.com
+
+✅ Extension pour Chrome/Firefox :
+
+Affiche les balises SEO d'une page (titre, description, H1, etc.)
+
+Analyse les liens internes/externes
+
+Donne une vue rapide sur l’optimisation on-page
+
+💡 Super utile pour tester ta propre page ou comparer avec d'autres sites.
+
+------------------------------------------------------------------------------------------------
+
+📈 4. Ubersuggest (par Neil Patel)
+📌 https://neilpatel.com/ubersuggest/
+
+✅ Fonctions gratuites :
+
+Analyse de site (SEO on-page)
+
+Idées de mots-clés
+
+Audit SEO basique
+
+💡 Le mode gratuit est limité, mais suffisant pour un CV ou petit site perso.
+
+------------------------------------------------------------------------------------------------
+
+🧪 5. Seobility – SEO Checker gratuit
+📌 https://www.seobility.net/en/seocheck/
+
+✅ Analyse complète d'une URL :
+
+Balises HTML
+
+Structure Hn
+
+Vitesse, liens cassés, SEO technique
+
+💡 Très bon outil si tu veux un rapport rapide et lisible.
+
+------------------------------------------------------------------------------------------------
+
+🔗 6. Screaming Frog (version gratuite)
+📌 https://www.screamingfrog.co.uk/seo-spider/
+
+✅ Audit SEO local (sur ton ordinateur) :
+
+Analyse des balises, liens, images, redirections
+
+Parfait pour tester un site avant de le mettre en ligne
+
+💡 Version gratuite limitée à 500 pages — largement suffisant pour un site CV
+
+------------------------------------------------------------------------------------------------
+
+🚀 Bonus : pour les mots-clés
+https://answerthepublic.com/ → Pour savoir ce que les gens recherchent autour de ton métier.
+
+https://keywordtool.io/ → Pour générer des idées de mots-clés.
+
+Souhaites-tu que je t’aide à utiliser l’un de ces outils sur ton projet CV ou à 
+optimiser ton contenu HTML pour le SEO ?
