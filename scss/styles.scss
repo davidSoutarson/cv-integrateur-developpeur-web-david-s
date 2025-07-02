@@ -50,11 +50,10 @@ body {
     background-color: $Fond-secondaire;
     width: 50%;
 
-    .a-propos {
+    #a-propos {
         .th2 {
-            color: red;
             margin-top: 1em;
-            /* margin-bottom: 1em; */
+            margin-bottom: 1em;
         }
 
         p {
@@ -81,11 +80,12 @@ body {
             display: inline;
 
             li {
+                margin-top: 1em; // a voire ?
+                margin-bottom: 1em; // a voire ?
+
                 a {
                     color: $Menu-texte;
                     text-decoration: none;
-                    margin-top: 1em; // a voire ?
-                    margin-bottom: 1em; // a voire ?
                 }
             }
 
@@ -95,18 +95,23 @@ body {
 
 
 .carrousel-controls-fixed {
-
+    border: solid rgba(230, 100, 13, 0.938) 2px;
     margin-top: 1em;
     bottom: 20px;
     left: 50%;
     display: flex;
     justify-content: center;
     gap: 1rem;
+    justify-content: flex-end;
 
     .carrousel-controls {
+        width: 50%;
         border: solid purple 2px;
         display: flex;
-        gap: 1rem;
+        /* gap: 1rem; */
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-right: 9%;
 
         button {
             background-color: $Couleur-principale;
