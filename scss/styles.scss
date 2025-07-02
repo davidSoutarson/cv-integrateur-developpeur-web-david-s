@@ -90,11 +90,18 @@ body {
             }
 
         }
+
+        .lateral-sous-menu {
+            li {
+                padding-left: 5%;
+            }
+
+        }
     }
 }
 
 
-.carrousel-controls-fixed {
+.carrousel-controls {
     border: solid rgba(230, 100, 13, 0.938) 2px;
     margin-top: 1em;
     bottom: 20px;
@@ -104,7 +111,7 @@ body {
     gap: 1rem;
     justify-content: flex-end;
 
-    .carrousel-controls {
+    .carrousel-boutons {
         width: 50%;
         border: solid purple 2px;
         display: flex;
