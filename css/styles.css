@@ -29,6 +29,15 @@ body {
   background-color: rgb(245, 245, 245);
   width: 50%;
 }
+.contenu .a-propos .th2 {
+  color: red;
+  margin-top: 1em;
+  /* margin-bottom: 1em; */
+}
+.contenu .a-propos p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
 .sommaire-gauche {
   background-color: rgba(33, 33, 33, 0.95);
@@ -45,12 +54,12 @@ body {
   list-style-type: none;
   display: inline;
 }
-.sommaire-gauche .lateral-col .lateral-menu li,
-.sommaire-gauche .lateral-col .lateral-menu a,
-.sommaire-gauche .lateral-col .lateral-sous-menu li,
-.sommaire-gauche .lateral-col .lateral-sous-menu a {
+.sommaire-gauche .lateral-col .lateral-menu li a,
+.sommaire-gauche .lateral-col .lateral-sous-menu li a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .carrousel-controls-fixed {

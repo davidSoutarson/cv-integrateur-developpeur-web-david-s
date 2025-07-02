@@ -49,6 +49,19 @@ body {
     flex-direction: column;
     background-color: $Fond-secondaire;
     width: 50%;
+
+    .a-propos {
+        .th2 {
+            color: red;
+            margin-top: 1em;
+            /* margin-bottom: 1em; */
+        }
+
+        p {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+    }
 }
 
 .sommaire-gauche {
@@ -67,11 +80,15 @@ body {
             list-style-type: none;
             display: inline;
 
-            li,
-            a {
-                color: $Menu-texte;
-                text-decoration: none;
+            li {
+                a {
+                    color: $Menu-texte;
+                    text-decoration: none;
+                    margin-top: 1em; // a voire ?
+                    margin-bottom: 1em; // a voire ?
+                }
             }
+
         }
     }
 }
