@@ -1,7 +1,9 @@
 // SCSS avec une variable
 
 $Fond-principal: rgba(255, 255, 255, 1); // Fond clair,blanc pur
-$Fond-secondaire: rgba(245, 245, 245, 1); //Sections,cartes
+// plus de tansparense
+$Fond-secondaire: rgb(245, 245, 245); //Sections,cartes
+
 $Texte-pricipal: rgba(33, 33, 33, 0.9); //Texte noir doux
 $Texte-secondaire: rgba(100, 100, 100, 0.7); //Sous-titres,légendes
 $Couleur-principale: rgba(52, 152, 219, 1); //Boutons,liens,accents bleu vif
@@ -14,8 +16,10 @@ $Ombre-légère: rgba(0, 0, 0, 0.1); //Ombres de boîtes,textes
 
 $Couleur-survol: rgba(41, 128, 185, 1); // Bleu plus foncé pour hover boutons et liens
 $Couleur-soulignement: rgba(52, 152, 219, 0.6); // Bleu clair transparent pour soulignement au passage souris
-$Menu-lateral-fond: rgba(33, 33, 33, 0.95); // Fond sombre semi-transparent pour menu latéral
-$Menu-texte: rgba(255, 255, 255, 0.9); // Texte clair pour menu
+// plus de tansparense
+$Menu-lateral-fond: rgb(33, 33, 33); // Fond sombre "semi-transparent" pour menu latéral
+$Menu-texte: rgb(255, 255, 255); // Texte clair pour menu
+
 $Menu-texte-actif: rgba(52, 152, 219, 1); // Texte en bleu vif pour l’élément actif du menu
 
 * {
@@ -33,12 +37,47 @@ body {
 
 #wrapper {
     width: 90%;
-    border: solid red 2px;
+    /* border: solid red 2px; */
     margin: 0 auto;
 }
 
+header {
+    display: block;
+    margin-bottom: 1em;
+
+    h1 {
+        margin-bottom: 1em;
+    }
+}
+
+.navigation-horizontal {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+
+    .navigation-h {
+        display: flex;
+
+        a {
+            margin: 0.5em;
+            background-color: $Couleur-principale;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background-color: $Couleur-survol;
+            }
+        }
+    }
+}
+
 .layout {
-    border: solid green 2px;
+    /* border: solid green 2px; */
     display: flex;
     flex-direction: row-reverse;
     margin: 0 auto;
@@ -102,7 +141,7 @@ body {
 
 
 .carrousel-controls {
-    border: solid rgba(230, 100, 13, 0.938) 2px;
+    /* border: solid rgba(230, 100, 13, 0.938) 2px; */
     margin-top: 1em;
     bottom: 20px;
     left: 50%;
@@ -113,7 +152,7 @@ body {
 
     .carrousel-boutons {
         width: 50%;
-        border: solid purple 2px;
+        /* border: solid purple 2px; */
         display: flex;
         /* gap: 1rem; */
         justify-content: space-between;
