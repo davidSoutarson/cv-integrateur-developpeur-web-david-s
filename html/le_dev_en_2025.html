@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Integrateur developpeur web - David Soutarson</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <meta name="description"
         content="CV de David Soutarson - Intégrateur développeur web en reconversion. Formé à l'ESECAD et THP. Compétences en HTML, CSS, JS, PHP, Ruby.">
     <meta property="og:title" content="CV Intégrateur Développeur Web - David Soutarson">
@@ -19,53 +19,28 @@
 <body>
     <div id="wrapper">
         <header>
-            <h1> Portfolio David Soutarson Integrateur Développeur Web </h1>
+            <h1> Portefolio David Soutarson Integrateur Dévelopeur Web </h1>
+            <p>Le metier de pour mois en 2025</p>
 
-            <button id="toggle-theme" aria-label="Activer/désactiver le mode sombre">🌓 Mode sombre</button>
 
             <!-- partie a inclure en php -->
-            <nav class="navigation-horizontal" aria-label="Menu principal"> <!-- pas besoi de role ici aria_label ok -->
+            <nav class="navigation-horizontal" role="navigation-horizontal" aria-label="Menu principal horizontal">
                 <ul class="navigation-h">
                     <li><a href="#a-propos">À propos de moi</a></li>
                     <li><a href="#competences">Compétences</a></li>
                     <li><a href="#projets">Projets</a></li>
                     <li><a href="#vision">Ma vision</a></li>
                     <li><a href="#contact">Contact</a></li>
-
-
                 </ul>
             </nav>
             <!-- fin partie a inclure en php -->
 
         </header>
-
         <div class="layout">
-
             <!-- Contenu principal -->
             <main class="contenu">
 
-                <section id="a-propos">
-
-                    <h2 class="th2">Bienvenue sur mon portfolio</h2>
-                    <section>
-                        <h3>David Soutarson</h3>
-                        <p>Intégrateur & Développeur Web</p>
-                    </section>
-                    <p>
-                        Passionné par le développement web, je vous présente ici mon parcours, mes réalisations et mes
-                        compétences
-                        techniques.
-                    </p>
-                    <p>
-                        Vous pouvez également consulter mon CV pour plus d’informations.
-                    </p>
-                    <a href="pdf/mon-cv.pdf" download class="btn-cv" title="Téléchargez mon CV au format PDF">📄
-                        Télécharger mon CV</a>
-                    <p>
-                        Bonne visite ! N’hésitez pas à me contacter pour une future collaboration.
-                    </p>
-
-                </section>
+                <h1>Ici nous meteron le contenu prinsipale </h1>
 
             </main>
 
@@ -76,7 +51,7 @@
 
                     <ul class="lateral-menu">
                         <li>
-                            <a class="survol_souligner" href="index.html">Accueil</a>
+                            <a class="survol_souligner" href="../index.html">accueil</a>
                         </li>
                         <li>
                             <a class="survol_souligner" href="html/a_propos_de_moi.html">À propos de moi</a>
@@ -97,16 +72,13 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="survol_souligner" href="html/lettre_de_motivation.html">Lettre de motivation</a>
+                            <a class="survol_souligner" href="lettre_de_motivation.html">Lettre de motivation</a>
                         </li>
                         <li>
-                            <a class="survol_souligner" href="html/mes_projet.html">Projets</a>
+                            <a class="survol_souligner" href="mes_projet.html">Projets</a>
                         </li>
                         <li>
-                            <hr> <!-- ############################ Parti 2 ############################## -->
-                        </li>
-                        <li>
-                            <a class="survol_souligner" href="html/le_dev_en_2025.html">Le Dev Web en 2025</a>
+                            <a class="survol_souligner" href="le_dev_en_2025.html">Le Dev Web en 2025</a>
 
                             <ul class="lateral-sous-menu">
 
@@ -126,9 +98,6 @@
 
                         </li>
                         <li>
-                            <hr> <!-- ############################ Parti 3 ############################## -->
-                        </li>
-                        <li>
                             <a class="survol_souligner" href="#">IA & développement</a>
 
                             <ul class="lateral-sous-menu">
@@ -145,9 +114,6 @@
 
                         </li>
                         <li>
-                            <hr> <!-- ############################ Parti 4 ############################## -->
-                        </li>
-                        <li>
                             <a class="survol_souligner" href="#">Pourquoi ce métier me passionne</a>
                         </li>
                         <li>
@@ -156,69 +122,33 @@
                     </ul>
                 </nav>
             </aside>
+        </div><!-- fin div layout  -->
 
-        </div>
 
         <!-- bouton de changemne de page pour un navigation de tipe livre -->
-        <div class="carrousel-controls" aria-label="Navigation du livre" aria-live="polite">
-
+        <div class="carrousel-controls" aria-label="Navigation du livre">
             <div class="carrousel-boutons">
-
                 <button id="prevPage">◀ Page précédente</button>
                 <button id="nextPage">Page suivante ▶</button>
-
             </div>
         </div>
 
         <footer>
-
-            <h2>Les technos utilisées pour se projet</h2>
-
+            <h2>Les technos utiliser pour se projet</h2>
             <ul class="technos-utilise">
-                <li>
-                    HTML5
-                </li>
-                <li>
-                    CSS3
-                </li>
-                <li>
-                    scss
-                </li>
-                <li>
-                    JavaScript
-                </li>
-                <li>
-                    PHP
-                </li>
-                <li>
-                    MySQL
-                </li>
-                <li>
-                    GitHub
-                </li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>scss</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>GitHub</li>
             </ul>
-
-            <a href="#wrapper" class="btn-retour-haut" title="Retour en haut de page">⬆ Retour haut</a>
-
             <p>© 2025 David Soutarson</p>
-
         </footer>
-    </div>
+        </di>
 
-    <!-- <script src="js/carrousel.js"></script> -- Pour gestion page suivante/précédente -->
-    <script src="js/darkMod.js"></script>
+        <!-- <script src="js/carrousel.js"></script> -- Pour gestion page suivante/précédente -->
 </body>
-
-<!-- 
-TODO :
-Ajouter un bouton de retour en haut de page
-
-Ajouter un bouton de téléchargement du CV (PDF)
-
-Ajouter une animation scroll ou carrousel
-Optimiser pour mobile (responsive)
-
-
--->
 
 </html>

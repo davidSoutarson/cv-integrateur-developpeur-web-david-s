@@ -42,6 +42,8 @@
 
                 <section id="a-propos">
 
+                    <h2 class="th2">CV ATS</h2>
+
                     <h2 class="th2">Informations personnelles</h2>
 
                     <article class="info-perso identite">
@@ -252,49 +254,85 @@
             </main>
 
             <!-- Sommaire dynamique à droite -->
-            <aside class="sommaire-gauche" aria-label="Sommaire dynamique">
+            <aside class="sommaire-gauche" role="complementary" aria-label="Sommaire latéral">
                 <h2>Sommaire</h2>
-                <nav class="lateral-col">
+                <nav class="lateral-col" aria-label="Menu latéral dynamique">
+
                     <ul class="lateral-menu">
-                        <li><a href="index.html">A propo de moi</a></li>
                         <li>
-                            <a href="html/competnceTecEx.html">CV & Compétences</a>
-                            <ul class="lateral-sous-menu">
-                                <li><a href="html/cv.html">Mon CV Grafique</a></li>
-                                <li><a href="html/cv_ats.html">Mon CV ATS</a></li>
-                                <li><a href="#">Compétences techniques avec exemples </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="letreDeMotivation.html">Ma lettre de motivation</a></li>
-                        <li><a href="mesProjet.html">Mes projets</a></li>
-                        <li>
-                            <a href="leDevEn2025.html">Le Dev Web en 2025</a>
-                            <ul class="lateral-sous-menu">
-                                <li><a href="#">Ce que l’on attend d’un développeur en 2025</a></li>
-                                <li><a href="#">Les technos que je métrise</a></li>
-                                <li><a href="#">Les technos que suis entrain apprendre</a></li>
-                                <li><a href="#">Les outille que j’utilise</a></li>
-                            </ul>
+                            <a class="survol_souligner" href="index.html">accueil</a>
                         </li>
                         <li>
-                            <a href="#">L’IA & les outils IA</a>
+                            <a class="survol_souligner" href="html/a_propos_de_moi.html">À propos de moi</a>
+                        </li>
+
+                        <li>
+                            <a class="survol_souligner" href="html/competnceTecEx.html">CV & Compétences</a>
                             <ul class="lateral-sous-menu">
-                                <li><a href="#">Les IA ou Large Langage Model un incontournable en 2025</a></li>
-                                <li><a href="#">Les outille du dev qui intègre un partie IA</a></li>
-                                <li><a href="#">Comment les utiliser en dev web</a></li>
-                                <li><a href="#">A quoi sert cet outille en dev web</a></li>
+                                <li>
+                                    <a class="survol_souligner" href="html/cv.html">CV Graphique</a>
+                                </li>
+                                <li>
+                                    <a class="survol_souligner" href="html/cv_ats.html">CV ATS</a>
+                                </li>
+                                <li>
+                                    <a class="survol_souligner" href="#">Compétences techniques</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Pourquoi ce métier me passionne</a>
+                            <a class="survol_souligner" href="lettre_de_motivation.html">Lettre de motivation</a>
                         </li>
                         <li>
-                            <a href="#">Ma vision et ce que je veux apporter</a>
+                            <a class="survol_souligner" href="mes_projet.html">Projets</a>
+                        </li>
+                        <li>
+                            <a class="survol_souligner" href="le_dev_en_2025.html">Le Dev Web en 2025</a>
+
+                            <ul class="lateral-sous-menu">
+
+                                <li>
+                                    <a class="survol_souligner" href="#">Ce que l’on attend d’un développeur en 2025</a>
+                                </li>
+                                <li>
+                                    <a class="survol_souligner" href="#">Les technos que je maitrise</a>
+                                </li>
+                                <li>
+                                    <a class="survol_souligner" href="#">Les technos que suis en train d'apprendre</a>
+                                </li>
+                                <li>
+                                    <a class="survol_souligner" href="#">Les outils que j’utilise</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a class="survol_souligner" href="#">IA & développement</a>
+
+                            <ul class="lateral-sous-menu">
+                                <li>
+                                    <a class="survol_souligner" href="#">Les IA en 2025</a>
+                                </li>
+                                <li>
+                                    <a class="survol_souligner" href="#">Les outils ia avec intégrée</a>
+                                </li>
+                                <li>
+                                    <a class="survol_souligner" href="#">Cas d’usage en développement</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a class="survol_souligner" href="#">Pourquoi ce métier me passionne</a>
+                        </li>
+                        <li>
+                            <a class="survol_souligner" href="#">Ma vision et ce que je veux apporter</a>
                         </li>
                     </ul>
                 </nav>
             </aside>
-        </div>
+
+        </div><!-- du div layout -->
 
         <!-- bouton de changemne de page pour un navigation de tipe livre -->
         <div class="carrousel-controls" aria-label="Navigation du livre">
