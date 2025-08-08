@@ -1,8 +1,9 @@
 // SCSS avec une variable
 
-$Fond-principal: rgba(255, 255, 255, 1); // Fond clair,blanc pur
-// plus de tansparense
-$Fond-secondaire: rgb(245, 245, 245); //Sections,cartes
+$Fond-principal: rgba(255, 255, 255, 1); // Fond blanc 
+$Fond-secondaire: rgba(245, 245, 245, 1); // Fond gris clair pour les sections secondaires
+$Fond-noir: rgba(18, 18, 18, 1); // Fond noir pour thème sombre
+$Fond-secondaire-noir: rgba(50, 50, 50, 1); // Fond gris foncé pour les sections secondaires en thème sombre
 
 $Texte-pricipal: rgba(33, 33, 33, 0.9); //Texte noir doux
 $Texte-secondaire: rgba(100, 100, 100, 0.7); //Sous-titres,légendes
@@ -22,6 +23,19 @@ $Menu-texte: rgb(255, 255, 255); // Texte clair pour menu
 
 $Menu-texte-actif: rgba(52, 152, 219, 1); // Texte en bleu vif pour l’élément actif du menu
 
+@use "sass:color";
+
+$blanc-claire: color.scale(#f5f5f5, $lightness: 10%); //   claire
+$blanc-plus-claire: color.scale(#f5f5f5, $lightness: 20%); //  plus claire
+$blanc-tres-claire: color.scale(#f5f5f5, $lightness: 30%); //  tres claire
+
+$Texte-secondaire-claire: color.scale($Texte-secondaire, $lightness: 10%); // Texte secondaire clair
+$Texte-secondaire-moyen-claire: color.scale($Texte-secondaire, $lightness: 20%); // Texte secondaire moyen clair
+$Texte-secondaire-tres-claire: color.scale($Texte-secondaire, $lightness: 30%); // Texte secondaire tres clair
+
+$Fond-noir-claire: color.scale($Fond-noir, $lightness: 10%); // Fond noir clair pour le thème sombre
+
+// Reset CSS
 * {
     margin: 0;
     padding: 0;
@@ -29,30 +43,87 @@ $Menu-texte-actif: rgba(52, 152, 219, 1); // Texte en bleu vif pour l’élémen
     text-decoration: none;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     background-color: $Fond-principal;
 }
 
+address,
+strong {
+    font-style: normal;
+    /* font-weight: normal; */
+}
+
+a {
+    color: $Couleur-principale;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $Couleur-survol;
+        text-decoration: underline;
+    }
+}
+
+
+.list-normale {
+    list-style-type: disc; // Type de puce
+    padding-left: 1.5em; // Espace pour la puce
+    margin-left: 1em; // Espace entre le texte et la puce
+    margin-top: 0.5em; // Espace entre les éléments de la liste
+    margin-bottom: 0.5em; // Espace entre les éléments de la liste
+
+    li {
+        list-style-type: disc; // Type de puce pour les éléments de la liste
+    }
+
+    // Si tu veux un style différent pour les sous-listes
+    ul {
+        list-style-type: circle; // Type de puce pour les sous-listes
+        padding-left: 1.5em; // Espace pour la puce des sous-listes
+        margin-left: 1em; // Espace entre le texte et la puce des sous-listes
+        margin-top: 0.5em; // Espace entre les éléments de la sous-liste
+        margin-bottom: 0.5em; // Espace entre les éléments de la sous-liste
+
+        li {
+            list-style-type: circle; // Type de puce pour les éléments de la sous-liste
+        }
+    }
+
+}
+
+.doubleTab {
+    margin-left: 4em; // Espace entre le texte et la puce
+    margin-top: 0.5em; // Espace entre les éléments de la liste
+    margin-bottom: 0.5em; // Espace entre les éléments de la liste
+}
+
+
 body.dark {
-    background-color: #121212;
+    background-color: $Fond-noir;
     color: #f5f5f5;
 
     .contenu {
-        background-color: #121212;
-        border-color: lighten(#f5f5f5, 30%);
+        background-color: $Fond-secondaire-noir;
+        border-color: $blanc-tres-claire;
 
         &::before,
         &::after {
-            background-color: #121212;
-            border-bottom-color: lighten(#f5f5f5, 10%);
-            border-right-color: lighten(#f5f5f5, 10%);
+            background-color: $Fond-secondaire-noir;
+            border-bottom-color: $blanc-claire;
+            border-right-color: $blanc-claire;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
         }
 
         a {
-            color: lighten(#f5f5f5, 20%);
+            color: $blanc-plus-claire; // couleur claire adaptée au fond sombre
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $Couleur-principale; // couleur principale (ex: bleu vif) au survol
+                text-decoration: underline;
+            }
         }
 
         h2,
@@ -63,7 +134,7 @@ body.dark {
     }
 
     .sommaire-gauche {
-        background-color: lighten(#121212, 10%);
+        background-color: $Fond-noir-claire;
         color: #f5f5f5;
 
         .survol_souligner:hover {
@@ -145,9 +216,9 @@ header {
         width: 100%;
         height: 100%;
         background-color: $Fond-secondaire;
-        border-bottom: 2px double lighten($Texte-secondaire, 10%);
+        border-bottom: 2px double $Texte-secondaire-claire;
         border-width: 2px 4px;
-        border-right: 2px double lighten($Texte-secondaire, 30%);
+        border-right: 2px double $Texte-secondaire-tres-claire;
         border-width: 2px 4px;
         z-index: -2;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -158,14 +229,16 @@ header {
     &::after {
         top: 1px;
         right: 11px; // Ajuster la position pour l'effet empilé
-        border-bottom: 2px double lighten($Texte-secondaire, 20%);
+        border-bottom: 2px double $Texte-secondaire-moyen-claire;
         border-width: 2px 4px;
-        border-right: 2px double lighten($Texte-secondaire, 20%);
+        border-right: 2px double $Texte-secondaire-moyen-claire;
         border-width: 2px 4px;
         z-index: -1;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-collapse: collapse;
     }
+
+
 
 
     // Colonne gauche
@@ -199,6 +272,24 @@ header {
     }
 }
 
+/* cv ats */
+
+.centrer_souligner {
+    text-align: center;
+    padding: 1em;
+    border-bottom: 2px solid $Couleur-soulignement;
+}
+
+.sans_retours {
+    white-space: nowrap;
+    /* empêche les retours à la ligne dans tout le paragraphe */
+}
+
+.souligner {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 2px solid $Couleur-soulignement;
+}
 
 
 .sommaire-gauche {
@@ -283,3 +374,5 @@ header {
         }
     }
 }
+
+/* fin */
