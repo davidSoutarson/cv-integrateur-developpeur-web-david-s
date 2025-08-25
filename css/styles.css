@@ -130,6 +130,7 @@ header h1 {
 
 .layout {
   /* border: solid green 2px; */
+  min-height: 600px;
   display: flex;
   flex-direction: row-reverse;
   margin: 0 auto;
