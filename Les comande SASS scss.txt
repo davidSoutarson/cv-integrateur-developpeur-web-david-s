@@ -1,0 +1,65 @@
+"CREATION"
+    sass <input.scss> [output.css]
+    sass <input.scss>:<output.css> <input/>:<output/> <dir/>
+
+Entrée et sortie
+--[no-]stdin → Lire la feuille de style depuis l’entrée standard (stdin).
+
+--[no-]indented → Utiliser la syntaxe indentée pour l’entrée depuis stdin.
+
+-I, --load-path=<PATH> → Chemin à utiliser pour résoudre les imports. Peut être passé plusieurs fois.
+
+-p, --pkg-importer=<TYPE> → Importeur intégré pour les URLs pkg: (ex : [node] charge les fichiers comme Node.js).
+
+-s, --style=<NAME> → Style de sortie (expanded par défaut, ou compressed).
+
+--[no-]charset → Émettre un @charset ou BOM pour le CSS contenant des caractères non-ASCII (activé par défaut).
+
+--[no-]error-css → En cas d’erreur, générer une feuille de style décrivant l’erreur (par défaut activé lorsqu’on compile vers un fichier).
+
+--update → Compiler uniquement les feuilles de style obsolètes.
+
+Source Maps
+--[no-]source-map → Générer ou non des source maps (activé par défaut).
+
+--source-map-urls → Comment lier les source maps aux fichiers source (relative par défaut, ou absolute).
+
+--[no-]embed-sources → Inclure le contenu des fichiers sources dans les source maps.
+
+--[no-]embed-source-map → Inclure le contenu des source maps dans le CSS.
+
+Avertissements
+-q, --[no-]quiet → Ne pas afficher les avertissements.
+
+--[no-]quiet-deps → Ne pas afficher les avertissements du compilateur venant des dépendances (feuilles de style importées via load paths).
+
+--[no-]verbose → Afficher tous les avertissements de dépréciation, même répétitifs.
+
+--fatal-deprecation → Traiter les dépréciations comme des erreurs. On peut aussi préciser une version Sass pour inclure le comportement déprécié jusqu’à cette version.
+
+--silence-deprecation → Ignorer les avertissements de dépréciation.
+
+--future-deprecation → Activer les dépréciations à venir pour tester en avance.
+
+Autres options
+-w, --watch → Surveiller les feuilles de style et recompiler à chaque modification.
+
+--[no-]poll → Vérifier manuellement les changements plutôt que d’utiliser le watcher natif (valable seulement avec --watch).
+
+--[no-]stop-on-error → Ne pas compiler d’autres fichiers après une erreur.
+
+-i, --interactive → Lancer un shell interactif SassScript.
+
+-c, --[no-]color → Utiliser ou non les couleurs dans le terminal pour les messages.
+
+--[no-]unicode → Utiliser ou non les caractères Unicode pour les messages.
+
+--[no-]trace → Afficher la trace complète Dart en cas d’exception.
+
+-h, --help → Afficher cette aide.
+
+--version → Afficher la version de Dart Sass.
+
+-------------------------exemple-------------------
+
+sass --watch scss/styles.scss:css/styles.css
