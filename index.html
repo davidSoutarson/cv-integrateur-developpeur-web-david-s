@@ -27,13 +27,18 @@
             <!-- partie a inclure en php -->
             <nav class="navigation-horizontal" aria-label="Menu principal"> <!-- pas besoi de role ici aria_label ok -->
                 <ul class="navigation-h">
-                    <li><a href="#a-propos">À propos de moi</a></li>
-                    <li><a href="#competences">Compétences</a></li>
-                    <li><a href="#projets">Projets</a></li>
-                    <li><a href="#vision">Ma vision</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <!-- partie 1 -->
+                    <li><a href="index.html">Accueil</a></li>
 
-
+                    <li><a href="html/a_propos_de_moi.html">À propos de moi</a></li>
+                    <!-- partie 2 -->                       
+                    <li><a href="html/cv.html">CV Graphique</a></li>
+                    <li><a href="html/cv_ats.html">CV ATS</a></li>
+                    <!-- partie 3 -->
+                    <li><a href="html/mes_projet.html">Projets</a></li>
+                    <li><a href="html/competenceTecEx.html">Compétences</a></li>
+                    <!-- partie 4 -->
+                    <li><a href="html/contact.html">Contact</a></li>
                 </ul>
             </nav>
             <!-- fin partie a inclure en php ? -->
@@ -60,11 +65,14 @@
                     <p>
                         Vous pouvez également consulter mon CV pour plus d’informations.
                     </p>
-                    <a href="pdf/mon-cv.pdf" download class="btn-cv" title="Téléchargez mon CV au format PDF">📄
+                    <a href="docs/CVats.pdf" download class="btn-cv" title="Téléchargez mon CV au format PDF">📄
                         Télécharger mon CV</a>
                     <p>
                         Bonne visite ! N’hésitez pas à me contacter pour une future collaboration.
                     </p>
+
+
+                    
 
                 </section>
 
@@ -76,19 +84,17 @@
                 <nav class="lateral-col" aria-label="Menu latéral dynamique">
 
                     <ul class="lateral-menu">
-                        <!-- parti 0 -->
-                        <li>
-                            <a class="survol_souligner" href="index.html">Accueil</a>
-                            <ul class="lateral-sous-menu">
-
-                                <li>
-                                    <a class="survol_souligner" href="html/a_propos_de_moi.html">À propos de moi</a>
-                                </li>
-
-                            </ul>
-                        </li>
                         <!-- parti 1 -->
                         <li>
+                            <a class="survol_souligner" href="index.html">Accueil</a>
+                        </li>
+                        <li>
+                            <a class="survol_souligner" href="html/a_propos_de_moi.html">À propos de moi</a>
+                        </li>
+                        <!-- parti 2 -->
+
+                        <li>
+                            CV
                            <ul class="lateral-sous-menu">
                                 <li>
                                     <a class="survol_souligner" href="html/cv.html">CV Graphique</a>
@@ -96,17 +102,16 @@
                                 <li>
                                     <a class="survol_souligner" href="html/cv_ats.html">CV ATS</a>
                                 </li>
-                                <li>
-                                <a class="survol_souligner" href="html/lettre_de_motivation.html">Lettre de motivation</a>
-                                </li>
+                               
                             </ul>
 
                         </li>
-                        <!-- partie 2 -->
+                        <!-- partie 3 -->
                         <li>
+                            Compétences & Projets
                             <ul class="lateral-sous-menu">
                                 <li>
-                                    <a class="survol_souligner" href="html/competnceTecEx.html">Compétences
+                                    <a class="survol_souligner" href="html/competenceTecEx.html">Compétences
                                     techniques</a>
                                 </li>
                                 <li>
@@ -115,29 +120,13 @@
                         </ul>
 
                         </li>
-                        <!-- parti 3 -->
+                        <!-- partie 4 -->
                         <li>
-                            <a class="survol_souligner" href="html/le_dev_en_2025.html">Le Dev Web en 2025</a>
-
-                            <ul class="lateral-sous-menu">
-
-                                <li>
-                                    <a class="survol_souligner" href="#">Ce que l’on attend d’un développeur en 2025</a>
-                                </li>
-                                <li>
-                                    <a class="survol_souligner" href="#">Les technos que je maitrise</a>
-                                </li>
-                                <li>
-                                    <a class="survol_souligner" href="#">Les technos que suis en train d'apprendre</a>
-                                </li>
-                                <li>
-                                    <a class="survol_souligner" href="#">Les outils que j’utilise</a>
-                                </li>
-                            </ul>
-
-                        </li> 
+                            <a class="survol_souligner" href="html/contact.html">Contact</a>
+                        </li>
+                
                     </ul>
-                    <button> <a href="#wrapper" class="btn-retour-haut" title="Retour en haut de page">⬆ Retour haut</a> </button>
+                    
                     
                 </nav>
             </aside>
@@ -160,32 +149,20 @@
             <h2>Les technos utilisées pour se projet</h2>
 
             <ul class="technos-utilise">
-                <li>
-                    HTML5
-                </li>
-                <li>
-                    CSS3
-                </li>
-                <li>
-                    scss
-                </li>
-                <li>
-                    JavaScript
-                </li>
-                <li>
-                    PHP
-                </li>
-                <li>
-                    MySQL
-                </li>
-                <li>
-                    GitHub
-                </li>
+
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>scss</li>
+                <li>JavaScript</li>
+                <li>GitHub</li>
+                
             </ul>
 
-            <a href="#wrapper" class="btn-retour-haut" title="Retour en haut de page">⬆ Retour haut</a>
 
             <p>© 2025 David Soutarson</p>
+            <button> <a href="#wrapper" class="btn-retour-haut" title="Retour en haut de page">⬆ Retour haut</a> </button>
+
+            
 
         </footer>
     </div>
