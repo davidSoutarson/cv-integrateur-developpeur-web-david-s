@@ -1,39 +1,41 @@
-// SCSS avec une variable
+// SCSS avec variables globales
 
-$Fond-principal: rgba(255, 255, 255, 1); // Fond blanc 
-$Fond-secondaire: rgba(245, 245, 245, 1); // Fond gris clair pour les sections secondaires
-$Fond-noir: rgba(18, 18, 18, 1); // Fond noir pour thème sombre
-$Fond-secondaire-noir: rgba(50, 50, 50, 1); // Fond gris foncé pour les sections secondaires en thème sombre
+$Fond-principal: rgba(255, 255, 255, 1); // Fond blanc principal
+$Fond-secondaire: rgba(245, 245, 245, 1); // Fond gris clair (sections secondaires)
+$Fond-noir: rgba(18, 18, 18, 1); // Fond noir (mode sombre)
+$Fond-secondaire-noir: rgba(50, 50, 50, 1); // Fond gris foncé (sections secondaires en mode sombre)
 
-$Texte-pricipal: rgba(33, 33, 33, 0.9); //Texte noir doux
-$Texte-secondaire: rgba(100, 100, 100, 0.7); //Sous-titres,légendes
-$Couleur-principale: rgba(52, 152, 219, 1); //Boutons,liens,accents bleu vif
-$Couleur-primaire-claire: rgba(52, 152, 219, 0.1); //Survols,fonds légers de bouton
-$Couleur-secondaire: rgba(231, 76, 60, 1); //Boutons d’action secondaire,alertes rouges
-$Gris-clair: rgba(200, 200, 200, 1); //Bordures,séparateurs
-$Ombre-légère: rgba(0, 0, 0, 0.1); //Ombres de boîtes,textes
+$Texte-pricipal: rgba(33, 33, 33, 0.9); // Texte noir doux (lisible, non agressif)
+$Texte-secondaire: rgba(100, 100, 100, 0.7); // Sous-titres, légendes, informations secondaires
+$Couleur-principale: rgba(52, 152, 219, 1); // Couleur principale (boutons, liens, accents bleu vif)
+$Couleur-primaire-claire: rgba(52, 152, 219, 0.1); // Variation claire (fonds, survols)
+$Couleur-secondaire: rgba(231, 76, 60, 1); // Couleur secondaire (alertes, boutons rouges)
+$Gris-clair: rgba(200, 200, 200, 1); // Bordures et séparateurs
+$Ombre-légère: rgba(0, 0, 0, 0.1); // Ombres légères (boîtes, texte)
 
 // Couleurs supplémentaires
 
-$Couleur-survol: rgba(41, 128, 185, 1); // Bleu plus foncé pour hover boutons et liens
-$Couleur-soulignement: rgba(52, 152, 219, 0.6); // Bleu clair transparent pour soulignement au passage souris
-// plus de tansparense
-$Menu-lateral-fond: rgb(33, 33, 33); // Fond sombre "semi-transparent" pour menu latéral
-$Menu-texte: rgb(255, 255, 255); // Texte clair pour menu
+$Couleur-survol: rgba(41, 128, 185, 1); // Bleu plus foncé (hover sur boutons et liens)
+$Couleur-soulignement: rgba(52, 152, 219, 0.6); // Bleu clair semi-transparent (soulignement au survol)
 
-$Menu-texte-actif: rgba(52, 152, 219, 1); // Texte en bleu vif pour l’élément actif du menu
+// Menu latéral
+$Menu-lateral-fond: rgb(33, 33, 33); // Fond sombre pour le menu latéral
+$Menu-texte: rgb(255, 255, 255); // Texte clair pour le menu
+$Menu-texte-actif: rgba(52, 152, 219, 1); // Texte bleu vif pour l’élément actif du menu
 
 @use "sass:color";
 
-$blanc-claire: color.scale(#f5f5f5, $lightness: 10%); //   claire
-$blanc-plus-claire: color.scale(#f5f5f5, $lightness: 20%); //  plus claire
-$blanc-tres-claire: color.scale(#f5f5f5, $lightness: 30%); //  tres claire
+// Variations de blancs
+$blanc-claire: color.scale(#f5f5f5, $lightness: 10%); // Blanc légèrement éclairci
+$blanc-plus-claire: color.scale(#f5f5f5, $lightness: 20%); // Blanc plus clair
+$blanc-tres-claire: color.scale(#f5f5f5, $lightness: 30%); // Blanc très clair
 
-$Texte-secondaire-claire: color.scale($Texte-secondaire, $lightness: 10%); // Texte secondaire clair
+// Variations de texte secondaire
+$Texte-secondaire-claire: color.scale($Texte-secondaire, $lightness: 10%); // Texte secondaire éclairci
 $Texte-secondaire-moyen-claire: color.scale($Texte-secondaire, $lightness: 20%); // Texte secondaire moyen clair
-$Texte-secondaire-tres-claire: color.scale($Texte-secondaire, $lightness: 30%); // Texte secondaire tres clair
+$Texte-secondaire-tres-claire: color.scale($Texte-secondaire, $lightness: 30%); // Texte secondaire très clair
 
-$Fond-noir-claire: color.scale($Fond-noir, $lightness: 10%); // Fond noir clair pour le thème sombre
+$Fond-noir-claire: color.scale($Fond-noir, $lightness: 10%); // Noir légèrement éclairci (mode sombre)
 
 // Reset CSS
 * {
@@ -44,6 +46,7 @@ $Fond-noir-claire: color.scale($Fond-noir, $lightness: 10%); // Fond noir clair 
 }
 
 body {
+    background-image: url(../images/boisDeSapin.PNG);
     font-family: Arial, sans-serif;
     background-color: $Fond-principal;
 }
@@ -65,41 +68,43 @@ a {
     }
 }
 
-
 .list-normale {
-    list-style-type: disc; // Type de puce
-    padding-left: 1.5em; // Espace pour la puce
-    margin-left: 1em; // Espace entre le texte et la puce
-    margin-top: 0.5em; // Espace entre les éléments de la liste
-    margin-bottom: 0.5em; // Espace entre les éléments de la liste
+    list-style-type: disc; // Puces classiques
+    padding-left: 1.5em; // Indentation pour puces
+    margin-left: 1em; // Décalage gauche
+    margin-top: 0.5em; // Espacement vertical
+    margin-bottom: 0.5em;
 
     li {
         list-style-type: disc; // Type de puce pour les éléments de la liste
     }
 
-    // Si tu veux un style différent pour les sous-listes
+    // Style différent pour les sous-listes
     ul {
-        list-style-type: circle; // Type de puce pour les sous-listes
-        padding-left: 1.5em; // Espace pour la puce des sous-listes
-        margin-left: 1em; // Espace entre le texte et la puce des sous-listes
-        margin-top: 0.5em; // Espace entre les éléments de la sous-liste
-        margin-bottom: 0.5em; // Espace entre les éléments de la sous-liste
+        list-style-type: circle; // Puces en cercle
+        padding-left: 1.5em; // Indentation
+        margin-left: 1em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
 
         li {
-            list-style-type: circle; // Type de puce pour les éléments de la sous-liste
+            list-style-type: circle; // Puces circulaires
         }
     }
-
 }
 
 .doubleTab {
-    margin-left: 4em; // Espace entre le texte et la puce
-    margin-top: 0.5em; // Espace entre les éléments de la liste
-    margin-bottom: 0.5em; // Espace entre les éléments de la liste
+    margin-left: 4em; // Double indentation
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
+// =======================================================
+// 🌙 Mode sombre
+// =======================================================
 
 body.dark {
+    background-image: none;
     background-color: $Fond-noir;
     color: #f5f5f5;
 
@@ -116,12 +121,12 @@ body.dark {
         }
 
         a {
-            color: $blanc-plus-claire; // couleur claire adaptée au fond sombre
+            color: $blanc-plus-claire; // Texte clair adapté au fond sombre
             text-decoration: none;
             transition: color 0.3s ease;
 
             &:hover {
-                color: $Couleur-principale; // couleur principale (ex: bleu vif) au survol
+                color: $Couleur-principale; // Couleur principale au survol
                 text-decoration: underline;
             }
         }
@@ -138,16 +143,39 @@ body.dark {
         color: #f5f5f5;
 
         .survol_souligner:hover {
-            color: $Couleur-principale; // tu peux garder la couleur bleue vive
+            color: $Couleur-principale; // Accent bleu sur hover
         }
     }
 
-    /* Ajoute ici d’autres éléments à thème sombre si besoin */
+         // 🌙 Articles en mode sombre
+         .bloc-article {
+             background-color: $Fond-secondaire-noir;
+             border: 1px solid $Fond-noir-claire;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    
+             h3,
+             p,
+             li {
+                 color: #f5f5f5;
+             }
+    
+             &:hover {
+                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+                 transform: translateY(-3px);
+             }
+         }
+
+    /* Ajouter d’autres éléments spécifiques au thème sombre ici si nécessaire */
 }
 
+// =======================================================
+// 🏗️ Wrapper & Layout principal
+// =======================================================
+
 #wrapper {
+   
     width: 90%;
-    /* border: solid red 2px; */
+    /* Centrage global */
     margin: 0 auto;
 }
 
@@ -187,13 +215,21 @@ header {
 }
 
 .layout {
-    /* border: solid green 2px; */
+    /* Structure principale avec flexbox */
+    /* rotate: 1deg; */
     min-height: 600px;
     display: flex;
     flex-direction: row-reverse;
-    margin: 0 auto;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    /* margin: 0 auto; */
     justify-content: center;
+
 }
+
+// =======================================================
+// 📑 Contenu principal (zone centrale)
+// =======================================================
 
 .contenu {
     position: relative;
@@ -202,18 +238,22 @@ header {
     width: 50%;
     border-bottom: 2px solid $Texte-secondaire;
     border-right: 2px solid $Texte-secondaire;
-    padding: 1em; // Espace intérieur
-    margin-right: 1em; // Espace entre les colonnes; 
+    padding: 1em; // Espacement interne
+    margin-right: 1em; // Espacement entre colonnes
     z-index: 1;
     border-collapse: collapse;
 
-    // Pseudo-éléments pour effet "empilé"
+
+    /* Ombre droite pour effet “posé sur surface” */
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+
+    // Effet d’empilement avec pseudo-éléments
     &::before,
     &::after {
         content: '';
         position: absolute;
         top: 1px;
-        right: 4px; // Ajuster la position pour l'effet empilé
+        right: 4px; // Décalage pour créer l’effet
         width: 100%;
         height: 100%;
         background-color: $Fond-secondaire;
@@ -226,10 +266,9 @@ header {
         border-collapse: collapse;
     }
 
-
     &::after {
         top: 1px;
-        right: 11px; // Ajuster la position pour l'effet empilé
+        right: 11px; // Deuxième calque de décalage
         border-bottom: 2px double $Texte-secondaire-moyen-claire;
         border-width: 2px 4px;
         border-right: 2px double $Texte-secondaire-moyen-claire;
@@ -239,11 +278,9 @@ header {
         border-collapse: collapse;
     }
 
-
-
-
-    // Colonne gauche
+    // Colonne gauche (À propos)
     #a-propos {
+       
         margin-right: 1em;
 
         .th2 {
@@ -273,7 +310,7 @@ header {
     }
 }
 
-/* cv ats */
+/* Styles spécifiques au CV ATS */
 
 .centrer_souligner {
     text-align: center;
@@ -283,7 +320,7 @@ header {
 
 .sans_retours {
     white-space: nowrap;
-    /* empêche les retours à la ligne dans tout le paragraphe */
+    /* Empêche les retours à la ligne dans tout le paragraphe */
 }
 
 .souligner {
@@ -292,6 +329,9 @@ header {
     border-bottom: 2px solid $Couleur-soulignement;
 }
 
+// =======================================================
+// 📚 Sommaire (menu latéral gauche)
+// =======================================================
 
 .sommaire-gauche {
     background-color: $Menu-lateral-fond;
@@ -299,10 +339,15 @@ header {
     width: 20%;
     margin-right: 1em;
 
+  
+
     .lateral-col {
         display: flex;
         flex-direction: column;
 
+        // Ajouter position sticky pour suivre le scroll
+            position: sticky;
+            top: 1em; // distance par rapport au haut de la fenêtre
 
         .lateral-menu,
         .lateral-sous-menu {
@@ -310,8 +355,8 @@ header {
             display: inline;
 
             li {
-                margin-top: 1em; // a voire ?
-                margin-bottom: 1em; // a voire ?
+                margin-top: 1em;
+                margin-bottom: 1em;
 
                 .survol_souligner {
                     color: $Menu-texte;
@@ -322,26 +367,23 @@ header {
                         text-decoration: underline;
                     }
                 }
-
-
-
-
             }
-
         }
 
         .lateral-sous-menu {
             li {
                 padding-left: 5%;
             }
-
         }
     }
 }
 
-.btn-retour-haut{
-    position: fixed;
+// =======================================================
+// ⬆️ Bouton retour haut de page
+// =======================================================
 
+.btn-retour-haut {
+    position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
@@ -353,16 +395,50 @@ header {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
-    
+
     &:hover {
         background-color: $Couleur-survol;
     }
 }
 
+// =======================================================
+// 🎨 Style pour les <article>
+// =======================================================
+
+.bloc-article {
+    background-color: $Fond-principal; // Fond blanc par défaut
+    border: 1px solid $Gris-clair;
+    border-radius: 8px; // Coins arrondis
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    box-shadow: 0 4px 8px $Ombre-légère; // Légère ombre
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    h3 {
+        margin-bottom: 0.8em;
+        color: $Texte-pricipal;
+    }
+
+    p,
+    li {
+        color: $Texte-secondaire;
+        line-height: 1.5;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+
+// =======================================================
+// 🎞️ Carrousel (contrôles)
+// =======================================================
 
 .carrousel-controls {
-    /* border: solid rgba(230, 100, 13, 0.938) 2px; */
-    margin-top: 1em;
+    /* margin-top: 1em; */
+    margin-bottom: 1em;
     bottom: 20px;
     left: 50%;
     display: flex;
@@ -372,9 +448,7 @@ header {
 
     .carrousel-boutons {
         width: 50%;
-        /* border: solid purple 2px; */
         display: flex;
-        /* gap: 1rem; */
         justify-content: space-between;
         flex-wrap: wrap;
         margin-right: 15%;
