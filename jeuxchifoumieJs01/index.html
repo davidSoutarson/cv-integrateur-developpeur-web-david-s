@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pierre Feuille Ciseaux </title>
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <h1>Le jeu du shifoumi</h1>
+    <div id= 'wraper'>
+    <!-- <button type="button" name="button"></button> -->
+    <button >Pierre</button>
+    <button >Feuille</button>
+    <button >Ciseaux</button>
+    <!-- bonuse du puie !!! -->
+    <button class="puit">Puit</button>
+
+    <div class="resulta"></div>
+
+    </div>
+    <script >
+
+    const buttons = document.querySelectorAll("button");
+
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click",function(){
+        const joueur = buttons[i].innerHTML;
+        //console.log(joueur);
+
+        const robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
+        let resulta ="";
+        //logique du jeux
+        if (joueur === robot) {
+          resulta = "<p class= 'egalite'>Egalité </p>";
+        }
+        else if ((joueur === "Pierre" && robot === "Ciseaux")
+        || (joueur === "Feuille" && robot === "Pierre")
+        || (joueur === "Ciseaux" && robot === "Feuille") ) {
+          resulta = "<p class='joueur' > Gagné </p>";
+        }
+        else if ((joueur === "Puit" && robot === "Ciseaux")
+        || (joueur === "Puit" && robot === "Pierre")) {
+          resulta = "<p class= 'purple'>Gagné avec la tenique secréte";
+        }
+        else if ((robot === "Puit" && joueur === "Ciseaux" ) ||(robot === "Puit" && joueur === "Pierre" ) ) {
+            resulta = "<p class='robot'>Le Robot conais tout les secréte du jeux ! </br> Ariverez vous a les trouver ? <p>";
+          }
+        else if ((robot === "Puit" && joueur === "Feuille" ) ) {
+          resulta = "<p class='joueur'>Ganier la Feuille bouche le Puit </p> <p class ='robot'> - Le Robot a tenter le Puit . </br> -- Il et tomber dedan HA HA HA ... </br> --- Bien jouer humain ! </p>";
+        }
+         else if ((joueur === "Puit" && robot === "Feuille" )) {
+          resulta = "<p class='joueur'> Vous aver Perdu la Feuille bouche le Puit </p> <p class='robot'> -Le Robot conais tout les secréte du jeux <br> -- all your base are belong to us </br> --- HA HA HA .... </p>";
+        }
+        else {
+            resulta = "<p class='perdu'> Perdu </p>";
+          }
+
+
+        document.querySelector(".resulta").innerHTML = `
+        Joueur : ${joueur} </br>
+        Robot : ${robot} </br>
+        ${resulta}
+        `;
+        //console.log(`joueur : ${joueur} VS Robot : ${robot}`);
+
+      });
+    }
+    </script>
+
+  </body>
+</html>
