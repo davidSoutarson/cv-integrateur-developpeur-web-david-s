@@ -1,0 +1,5 @@
+# Forcer la détection du JavaScript
+js/*.js linguist-language=JavaScript
+
+
+

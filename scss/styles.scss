@@ -1,43 +1,78 @@
-// SCSS avec variables globales
+// =======================================================
+// 🎨 Variables globales
+// =======================================================
 
-$Fond-principal: rgba(255, 255, 255, 1); // Fond blanc principal
-$Fond-secondaire: rgba(245, 245, 245, 1); // Fond gris clair (sections secondaires)
-$Fond-noir: rgba(18, 18, 18, 1); // Fond noir (mode sombre)
-$Fond-secondaire-noir: rgba(50, 50, 50, 1); // Fond gris foncé (sections secondaires en mode sombre)
+// Couleurs principales
+$couleur-principale: rgba(52, 152, 219, 1);
+$couleur-principale-claire: rgba(52, 152, 219, 0.1);
+$couleur-secondaire: rgba(231, 76, 60, 1);
+$couleur-survol: rgba(41, 128, 185, 1);
+$couleur-soulignement: rgba(52, 152, 219, 0.6);
 
-$Texte-pricipal: rgba(33, 33, 33, 0.9); // Texte noir doux (lisible, non agressif)
-$Texte-secondaire: rgba(100, 100, 100, 0.7); // Sous-titres, légendes, informations secondaires
-$Couleur-principale: rgba(52, 152, 219, 1); // Couleur principale (boutons, liens, accents bleu vif)
-$Couleur-primaire-claire: rgba(52, 152, 219, 0.1); // Variation claire (fonds, survols)
-$Couleur-secondaire: rgba(231, 76, 60, 1); // Couleur secondaire (alertes, boutons rouges)
-$Gris-clair: rgba(200, 200, 200, 1); // Bordures et séparateurs
-$Ombre-légère: rgba(0, 0, 0, 0.1); // Ombres légères (boîtes, texte)
+// Fonds
+$fond-principal: rgba(255, 255, 255, 1);
+$fond-secondaire: rgba(245, 245, 245, 1);
+$fond-noir: rgba(18, 18, 18, 1);
+$fond-secondaire-noir: rgba(50, 50, 50, 1);
+$menu-lateral-fond: rgb(33, 33, 33);
 
-// Couleurs supplémentaires
+// Textes
+$texte-principal: rgba(33, 33, 33, 0.9);
+$texte-secondaire: rgba(100, 100, 100, 0.7);
+$menu-texte: rgb(255, 255, 255);
+$menu-texte-actif: $couleur-principale;
 
-$Couleur-survol: rgba(41, 128, 185, 1); // Bleu plus foncé (hover sur boutons et liens)
-$Couleur-soulignement: rgba(52, 152, 219, 0.6); // Bleu clair semi-transparent (soulignement au survol)
+// Bordures et ombres
+$gris-clair: rgba(200, 200, 200, 1);
+$ombre-legere: rgba(0, 0, 0, 0.1);
 
-// Menu latéral
-$Menu-lateral-fond: rgb(33, 33, 33); // Fond sombre pour le menu latéral
-$Menu-texte: rgb(255, 255, 255); // Texte clair pour le menu
-$Menu-texte-actif: rgba(52, 152, 219, 1); // Texte bleu vif pour l’élément actif du menu
-
+// Variations
 @use "sass:color";
+$blanc-claire: color.scale(#f5f5f5, $lightness: 10%);
+$blanc-plus-claire: color.scale(#f5f5f5, $lightness: 20%);
+$blanc-tres-claire: color.scale(#f5f5f5, $lightness: 30%);
+$texte-secondaire-claire: color.scale($texte-secondaire, $lightness: 10%);
+$texte-secondaire-moyen-claire: color.scale($texte-secondaire, $lightness: 20%);
+$texte-secondaire-tres-claire: color.scale($texte-secondaire, $lightness: 30%);
+$fond-noir-claire: color.scale($fond-noir, $lightness: 10%);
 
-// Variations de blancs
-$blanc-claire: color.scale(#f5f5f5, $lightness: 10%); // Blanc légèrement éclairci
-$blanc-plus-claire: color.scale(#f5f5f5, $lightness: 20%); // Blanc plus clair
-$blanc-tres-claire: color.scale(#f5f5f5, $lightness: 30%); // Blanc très clair
+// =======================================================
+// 🔹 Mixins réutilisables
+// =======================================================
 
-// Variations de texte secondaire
-$Texte-secondaire-claire: color.scale($Texte-secondaire, $lightness: 10%); // Texte secondaire éclairci
-$Texte-secondaire-moyen-claire: color.scale($Texte-secondaire, $lightness: 20%); // Texte secondaire moyen clair
-$Texte-secondaire-tres-claire: color.scale($Texte-secondaire, $lightness: 30%); // Texte secondaire très clair
+@mixin bouton-principal($bg: $couleur-principale, $color: white) {
+    background-color: $bg;
+    color: $color;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
 
-$Fond-noir-claire: color.scale($Fond-noir, $lightness: 10%); // Noir légèrement éclairci (mode sombre)
+    &:hover {
+        background-color: $couleur-survol;
+    }
+}
 
-// Reset CSS
+@mixin effet-empilement($offset-right, $border-color) {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: $offset-right;
+    width: 100%;
+    height: 100%;
+    background-color: $fond-secondaire;
+    border-bottom: 2px double $border-color;
+    border-right: 2px double $border-color;
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+// =======================================================
+// 🔹 Reset CSS
+// =======================================================
+
 * {
     margin: 0;
     padding: 0;
@@ -45,88 +80,89 @@ $Fond-noir-claire: color.scale($Fond-noir, $lightness: 10%); // Noir légèremen
     text-decoration: none;
 }
 
+// =======================================================
+// 🔹 Styles globaux
+// =======================================================
+
 body {
     background-image: url(../images/boisDeSapin.PNG);
     font-family: Arial, sans-serif;
-    background-color: $Fond-principal;
+    background-color: $fond-principal;
 }
 
 address,
 strong {
     font-style: normal;
-    /* font-weight: normal; */
 }
 
 a {
-    color: $Couleur-principale;
+    color: $couleur-principale;
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-        color: $Couleur-survol;
+        color: $couleur-survol;
         text-decoration: underline;
     }
 }
 
+// Listes
 .list-normale {
-    list-style-type: disc; // Puces classiques
-    padding-left: 1.5em; // Indentation pour puces
-    margin-left: 1em; // Décalage gauche
-    margin-top: 0.5em; // Espacement vertical
-    margin-bottom: 0.5em;
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin: 0.5em 0 0.5em 1em;
 
     li {
-        list-style-type: disc; // Type de puce pour les éléments de la liste
+        list-style-type: disc;
     }
 
-    // Style différent pour les sous-listes
     ul {
-        list-style-type: circle; // Puces en cercle
-        padding-left: 1.5em; // Indentation
-        margin-left: 1em;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        list-style-type: circle;
+        padding-left: 1.5em;
+        margin: 0.5em 0 0.5em 1em;
 
         li {
-            list-style-type: circle; // Puces circulaires
+            list-style-type: circle;
         }
     }
 }
 
 .doubleTab {
-    margin-left: 4em; // Double indentation
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin: 0.5em 0 0.5em 4em;
 }
 
 // =======================================================
-// 🌙 Mode sombre
+// 🔹 Mode sombre
 // =======================================================
+
+#toggle-theme {
+    @include bouton-principal($fond-secondaire, $texte-principal);
+}
 
 body.dark {
     background-image: none;
-    background-color: $Fond-noir;
+    background-color: $fond-noir;
     color: #f5f5f5;
 
     .contenu {
-        background-color: $Fond-secondaire-noir;
+        background-color: $fond-secondaire-noir;
         border-color: $blanc-tres-claire;
 
-        &::before,
+        &::before {
+            @include effet-empilement(4px, $blanc-claire);
+        }
+
         &::after {
-            background-color: $Fond-secondaire-noir;
-            border-bottom-color: $blanc-claire;
-            border-right-color: $blanc-claire;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            @include effet-empilement(11px, $blanc-claire);
+            z-index: -1;
         }
 
         a {
-            color: $blanc-plus-claire; // Texte clair adapté au fond sombre
-            text-decoration: none;
+            color: $blanc-plus-claire;
             transition: color 0.3s ease;
 
             &:hover {
-                color: $Couleur-principale; // Couleur principale au survol
+                color: $couleur-principale;
                 text-decoration: underline;
             }
         }
@@ -139,48 +175,42 @@ body.dark {
     }
 
     .sommaire-gauche {
-        background-color: $Fond-noir-claire;
+        background-color: $fond-noir-claire;
         color: #f5f5f5;
 
         .survol_souligner:hover {
-            color: $Couleur-principale; // Accent bleu sur hover
+            color: $couleur-principale;
         }
     }
 
-         // 🌙 Articles en mode sombre
-         .bloc-article {
-             background-color: $Fond-secondaire-noir;
-             border: 1px solid $Fond-noir-claire;
-             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    
-             h3,
-             p,
-             li {
-                 color: #f5f5f5;
-             }
-    
-             &:hover {
-                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
-                 transform: translateY(-3px);
-             }
-         }
+    .bloc-article {
+        background-color: $fond-secondaire-noir;
+        border: 1px solid $fond-noir-claire;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 
-    /* Ajouter d’autres éléments spécifiques au thème sombre ici si nécessaire */
+        h3,
+        p,
+        li {
+            color: #f5f5f5;
+        }
+
+        &:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+            transform: translateY(-3px);
+        }
+    }
 }
 
 // =======================================================
-// 🏗️ Wrapper & Layout principal
+// 🔹 Wrapper & Layout
 // =======================================================
 
 #wrapper {
-   
     width: 90%;
-    /* Centrage global */
     margin: 0 auto;
 }
 
 header {
-    display: block;
     margin-bottom: 1em;
 
     h1 {
@@ -197,231 +227,153 @@ header {
         display: flex;
 
         a {
+            @include bouton-principal();
             margin: 0.5em;
-            background-color: $Couleur-principale;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-
-            &:hover {
-                background-color: $Couleur-survol;
-            }
         }
     }
 }
 
 .layout {
-    /* Structure principale avec flexbox */
-    /* rotate: 1deg; */
-    min-height: 600px;
     display: flex;
     flex-direction: row-reverse;
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-    /* margin: 0 auto; */
+    margin: 2.5em 0 1em 0;
     justify-content: center;
-
 }
 
 // =======================================================
-// 📑 Contenu principal (zone centrale)
+// 🔹 Contenu principal
 // =======================================================
 
 .contenu {
     position: relative;
     display: flex;
-    background-color: $Fond-secondaire;
+    background-color: $fond-secondaire;
     width: 50%;
-    border-bottom: 2px solid $Texte-secondaire;
-    border-right: 2px solid $Texte-secondaire;
-    padding: 1em; // Espacement interne
-    margin-right: 1em; // Espacement entre colonnes
+    border-bottom: 2px solid $texte-secondaire;
+    border-right: 2px solid $texte-secondaire;
+    padding: 1em;
+    margin-right: 1em;
     z-index: 1;
-    border-collapse: collapse;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 
-
-    /* Ombre droite pour effet “posé sur surface” */
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
-
-    // Effet d’empilement avec pseudo-éléments
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        top: 1px;
-        right: 4px; // Décalage pour créer l’effet
-        width: 100%;
-        height: 100%;
-        background-color: $Fond-secondaire;
-        border-bottom: 2px double $Texte-secondaire-claire;
-        border-width: 2px 4px;
-        border-right: 2px double $Texte-secondaire-tres-claire;
-        border-width: 2px 4px;
-        z-index: -2;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-collapse: collapse;
+    &::before {
+        @include effet-empilement(4px, $texte-secondaire-claire);
     }
 
     &::after {
-        top: 1px;
-        right: 11px; // Deuxième calque de décalage
-        border-bottom: 2px double $Texte-secondaire-moyen-claire;
-        border-width: 2px 4px;
-        border-right: 2px double $Texte-secondaire-moyen-claire;
-        border-width: 2px 4px;
-        z-index: -1;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-collapse: collapse;
+        @include effet-empilement(11px, $texte-secondaire-moyen-claire);
     }
 
-    // Colonne gauche (À propos)
     #a-propos {
-       
         margin-right: 1em;
+    }
 
-        .th2 {
-            margin-top: 1em;
-            margin-bottom: 1em;
-        }
-
-        p {
-            margin-top: 1em;
-            margin-bottom: 1em;
-        }
+    #a-propos,
+    p{
+        margin: 1em;
     }
 
     .cv_graphique_col_droit {
         width: 80%;
         margin-left: 1em;
-
-        h2 {
-            margin-top: 1em;
-            margin-bottom: 1em;
-        }
-
-        p {
-            margin-top: 1em;
-            margin-bottom: 1em;
-        }
     }
 }
 
-/* Styles spécifiques au CV ATS */
+// =======================================================
+// 🔹 CV spécifique
+// =======================================================
 
 .centrer_souligner {
     text-align: center;
     padding: 1em;
-    border-bottom: 2px solid $Couleur-soulignement;
+    border-bottom: 2px solid $couleur-soulignement;
 }
 
 .sans_retours {
     white-space: nowrap;
-    /* Empêche les retours à la ligne dans tout le paragraphe */
 }
 
 .souligner {
     padding: 0.5em;
     margin-bottom: 0.5em;
-    border-bottom: 2px solid $Couleur-soulignement;
+    border-bottom: 2px solid $couleur-soulignement;
 }
 
 // =======================================================
-// 📚 Sommaire (menu latéral gauche)
+// 🔹 Sommaire gauche
 // =======================================================
 
 .sommaire-gauche {
-    background-color: $Menu-lateral-fond;
-    color: $Menu-texte;
+    background-color: $menu-lateral-fond;
+    color: $menu-texte;
     width: 20%;
     margin-right: 1em;
-
-  
 
     .lateral-col {
         display: flex;
         flex-direction: column;
-
-        // Ajouter position sticky pour suivre le scroll
-            position: sticky;
-            top: 1em; // distance par rapport au haut de la fenêtre
+        position: sticky;
+        top: 1em;
 
         .lateral-menu,
         .lateral-sous-menu {
-            list-style-type: none;
+            list-style: none;
             display: inline;
 
             li {
-                margin-top: 1em;
-                margin-bottom: 1em;
+                margin: 1em 0;
 
                 .survol_souligner {
-                    color: $Menu-texte;
+                    color: $menu-texte;
                     text-decoration: none;
 
                     &:hover {
-                        color: $Menu-texte-actif;
+                        color: $menu-texte-actif;
                         text-decoration: underline;
                     }
                 }
             }
         }
 
-        .lateral-sous-menu {
-            li {
-                padding-left: 5%;
-            }
+        .lateral-sous-menu li {
+            padding-left: 5%;
         }
     }
 }
 
 // =======================================================
-// ⬆️ Bouton retour haut de page
+// 🔹 Bouton retour haut
 // =======================================================
 
 .btn-retour-haut {
+    @include bouton-principal($fond-secondaire, $texte-principal);
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    background-color: $Fond-secondaire;
-    color: $Texte-pricipal;
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-
-    &:hover {
-        background-color: $Couleur-survol;
-    }
 }
 
 // =======================================================
-// 🎨 Style pour les <article>
+// 🔹 Articles
 // =======================================================
 
 .bloc-article {
-    background-color: $Fond-principal; // Fond blanc par défaut
-    border: 1px solid $Gris-clair;
-    border-radius: 8px; // Coins arrondis
+    background-color: $fond-principal;
+    border: 1px solid $gris-clair;
+    border-radius: 8px;
     padding: 1.5em;
     margin-bottom: 1.5em;
-    box-shadow: 0 4px 8px $Ombre-légère; // Légère ombre
+    box-shadow: 0 4px 8px $ombre-legere;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     h3 {
         margin-bottom: 0.8em;
-        color: $Texte-pricipal;
+        color: $texte-principal;
     }
 
     p,
     li {
-        color: $Texte-secondaire;
+        color: $texte-secondaire;
         line-height: 1.5;
     }
 
@@ -431,43 +383,253 @@ header {
     }
 }
 
-
 // =======================================================
-// 🎞️ Carrousel (contrôles)
+// 🔹 Carrousel
 // =======================================================
 
 .carrousel-controls {
-    /* margin-top: 1em; */
-    margin-bottom: 1em;
-    bottom: 20px;
-    left: 50%;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
     justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1em;
 
     .carrousel-boutons {
-        width: 50%;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
+        justify-content: space-between;
+        width: 50%;
         margin-right: 15%;
 
         button {
-            background-color: $Couleur-principale;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-
-            &:hover {
-                background-color: $Couleur-survol;
-            }
+            @include bouton-principal();
         }
     }
 }
 
-/* fin */
+// =======================================================
+// 🔹 Media Queries
+// =======================================================
+
+@media (min-width: 1024px) {
+    .layout {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 830px) {
+    #wrapper {
+        width: 100%;
+        padding: 0.5em;
+    }
+
+    .navigation-horizontal {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .burger-btn {
+            display: block;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            position: relative;
+
+            span {
+                display: block;
+                height: 3px;
+                background-color: $couleur-principale;
+                margin: 5px 0;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+        }
+
+        .navigation-h {
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: $fond-principal;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+
+            li a {
+                width: 100%;
+                text-align: center;
+                padding: 0.6rem 0;
+                display: block;
+            }
+        }
+
+        &.active .navigation-h {
+            max-height: 500px;
+        }
+    }
+
+    .layout {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .contenu {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        background-color: $fond-secondaire;
+        border-bottom: 2px solid $texte-secondaire;
+        border-right: 2px solid $texte-secondaire;
+        position: relative;
+    }
+
+    .sommaire-gauche {
+        display: none;
+    }
+
+    .bloc-article {
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    .carrousel-controls {
+        display: block;
+
+        .carrousel-boutons {
+            display: block;
+            text-align: center;
+            width: 100%;
+
+            button {
+                margin: 0.5em;
+            }
+        }
+    }
+
+    .btn-retour-haut {
+        bottom: 10px;
+        right: 10px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+// =======================================================
+// 🔹 Galerie projets
+// =======================================================
+
+.galerie-projet {
+    border: 2px solid $texte-secondaire;
+    border-radius: 8px;
+    padding: 0.5em;
+}
+
+.boxImage {
+    display: flex;
+    position: relative; // nécessaire pour positionner le message
+
+    &:hover {
+        box-shadow: 5px 5px 5px $texte-secondaire;
+
+        .description {
+            color: $texte-principal;
+        }
+
+        .message-zoom {
+            opacity: 1;
+        }
+    }
+
+    .message-zoom {
+        position: absolute;
+        bottom: 25%;
+        left: 30%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: $couleur-secondaire;
+        padding: 0.2em 0.5em;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+}
+
+.imageProjet {
+    display: block;
+    width: 45%;
+    margin: 0.5em;
+    border-bottom: 2px solid $texte-secondaire;
+    border-right: 2px solid $texte-secondaire;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 5px 5px 5px $texte-secondaire;
+    }
+
+    &.agrandie {
+        transform: scale(3.5);
+        z-index: 1000;
+        position: relative;
+        box-shadow: none;
+    }
+}
+
+.shifoumi {
+    width: 30%;
+}
+
+
+@media (max-width: 830px) {
+    .galerie-projet {
+        padding: 0.3em;
+        border-width: 1px;
+    }
+
+    .boxImage {
+        display: block; // empile les images verticalement
+        margin-bottom: 1em;
+        box-shadow: none;
+
+        .message-zoom {
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem; // texte plus petit pour mobile
+            padding: 0.15em 0.4em;
+        }
+    }
+
+    .imageProjet {
+        width: 60%; // image plus grande sur mobile
+        margin: 0.5em auto; // centrée
+        display: block;
+
+        &.agrandie {
+            transform: scale(2); // zoom un peu moins fort sur mobile
+        }
+    }
+}
+
+#contact {
+    margin: 1em;
+    width: 100%;
+}
+
+.formulaire-contact{
+    
+    
+    fieldset{
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: 1em;
+        border: 1px solid $gris-clair;
+        border-radius: 8px;
+        padding: 1em;
+    } 
+}
