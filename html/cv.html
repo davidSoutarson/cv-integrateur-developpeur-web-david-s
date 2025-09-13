@@ -5,14 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Integrateur developpeur web - David Soutarson</title>
-    <link rel="stylesheet" href="../css/styles.css">
+
     <meta name="description"
         content="CV de David Soutarson - Intégrateur développeur web en reconversion. Formé à l'ESECAD et THP. Compétences en HTML, CSS, JS, PHP, Ruby.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
     <meta property="og:title" content="CV Intégrateur Développeur Web - David Soutarson">
     <meta property="og:description"
         content="Découvrez mon profil, mes formations et compétences techniques en développement web.">
     <meta property="og:url" content="https://tonsite.fr/cv.html">
     <meta property="og:type" content="website">
+
+    <!-- Feuille de style -->
+    <link rel="stylesheet" href="../css/styles.css">
+
 
 </head>
 
@@ -23,22 +30,20 @@
 
             <button id="toggle-theme" aria-label="Activer/désactiver le mode sombre">🌓 Mode sombre</button>
 
-
             <!-- partie a inclure en php -->
-            <nav class="navigation-horizontal" role="navigation-horizontal" aria-label="Menu principal horizontal">
-                
+            <nav class="navigation-horizontal" role="navigation" aria-label="Menu principal horizontal">
                 <ul class="navigation-h">
                     <!-- partie 1 -->
                     <li><a href="../index.html">Accueil</a></li>
-    
-                    <li><a href="a_propos_de_moi.html">À propos de moi !</a></li>
-
+            
+                    <li><a href="a-propos.html">À propos de moi</a></li>
+                    
                     <!-- partie 2 -->
-                    <li><a href="cv.html">CV Graphique</a></li>
-                    <li><a href="cv_ats.html">CV ATS</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    
                     <!-- partie 3 -->
-                    <li><a href="mes_projet.html">Projets</a></li>
-                    <li><a href="competenceTecEx.html">Compétences</a></li>
+                    <li><a href="projet.html">Projets</a></li>
+                    <li><a href="competence.html">Compétences</a></li>
                     <!-- partie 4 -->
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -46,224 +51,147 @@
             <!-- fin partie a inclure en php -->
 
         </header>
-
-
         <div class="layout">
 
             <!-- Contenu principal -->
             <main class="contenu">
 
-                <section class=".cv_graphique_col_gauche" id="a-propos">
+                <section id="a-propos">
 
-                    <h2 class="th2">Intégrateur Développeur Web et Mobile</h2>
-                    
-                    <h2 class="th2">Informations personnelles</h2>
+                    <h2 class="centrer_souligner">Intégrateur Développeur Web et Mobile</h2>
 
-                    <article class="info-perso identite">
-                        <h3 class="souligner">Identité</h3>
 
-                        <address>
-                            <p><strong>Nom :</strong> Soutarson</p>
-                            <p><strong>Prénom :</strong> David</p>
-                            <p><strong>Téléphone :</strong> 06 22 89 55 48</p>
-                            <p><strong>Email :</strong> david.soutarson.pro@gmail.com</p>
-                            <p><strong>Adresse :</strong> 26 rue Saint Victorien Lyon 3éme</p>
-                        </address>
+                    <h2 class="centrer_souligner">David SOUTARSON</h2>
 
-                        <p><strong>Date de naissance :</strong> 10/04/1986</p>
-                        <p><strong>Permis:</strong> A (moto)</p>
-                    </article>
+                    <address class="centrer_souligner">
+                        <span class="sans_retours">Localisation&nbsp;:&nbsp;Lyon</span>
+                        &nbsp;&nbsp;
+                        <span class="sans_retours">Email&nbsp;:&nbsp;<a
+                                href="mailto:david.soutarson.pro@gmail.com">david.soutarson.pro@gmail.com</a></span>
+                        &nbsp;&nbsp;
+                        <span class="sans_retours">Téléphone&nbsp;:&nbsp;06&nbsp;22&nbsp;89&nbsp;55&nbsp;48</span>
+                        &nbsp;&nbsp;
+                        <span class="sans_retours">LinkedIn&nbsp;:&nbsp;<a
+                                href="https://www.linkedin.com/in/david-soutarson/"
+                                target="_blank">/in/david-soutarson/</a></span>
+                    </address>
 
-                    <article class="info-perso formation">
-                        <h3 class="souligner">Reconversion autofinancée</h3>
-                        <p>
-                            <strong>Formation (2022 – 03/2025)</strong>
-                            Intégrateur Développeur Web
-                            ESECAD (groupe SKILL&YOU)
-                        </p>
-                        <p>
-                            <strong>Formation (2019 – 3 mois)</strong>
-                            The Hacking Project (THP)
-                        </p>
-                    </article>
-
-                    <article class="info-perso etude">
-                        <h3 class="souligner">Études</h3>
-                        <p>Niveau DAEU A : 2014/2015 Université Lumière Lyon 2</p>
-                        <p>BEP Hôtellerie : François Mitterrand Château Chinon 58120 </p>
-                    </article>
-
-                    <article class="info-perso compétences">
-                        <h3 class="souligner">Développement et Intégration Web</h3>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>PHP</li>
-                            <li>Ruby</li>
-                            <li>JavaScript</li>
-                            <li>Installation d’un environnement de travail en local</li>
-                        </ul>
-                    </article>
-
-                    <article class="info-perso qualités">
-                        <h3 class="souligner">Qualités</h3>
-
-                        <ul>
-                            <li>Curieux</li>
-                            <li>Esprit d’équipe</li>
-                            <li>Proactif</li>
-                            <li>Bon relationnel</li>
-                            <li>Passionné</li>
-                            <li>Goût du défi</li>
-                            <li>Implication</li>
-                        </ul>
-                    </article>
-
-                </section>
-
-                <section class=".cv_graphique_col_droit" id="competences">
-
-                    <h2>Compétences en développement et intégration web</h2>
-
-                    <article class="Compétences">
-                        <h3>Compétences acquises en formation : Esecad </h3>
-                        <p class="texte-competences"><strong class="langage-web vert-clair">HTML</strong>Réalisation
-                            Template
-                            HTML</p>
-                        <p class="texte-competences"><strong class="langage-web vert-clair">CSS</strong>Flex box, CSS
-                            Grid
-                            layout, sass</p>
-                        <p class="texte-competences"><strong class="langage-web vert-clair">PHP</strong>Orienté objet.
-                            MySQL
-                            .PHP-AJAX asynchrones</p>
-                        <p class="texte-competences"><strong class="langage-web vert-clair">JavaScript</strong>Script
-                            JS,
-                            Ajax
-                        </p>
-                        <p class="texte-competences"><strong class="langage-web vert-clair">MySQL</strong>Créer une
-                            nouvelle
-                            base de données SQL</p>
-                        <p class="texte-competences"><strong class="langage-web vert-clair">WordPress</strong></p>
-                        <p class="texte-competences"><strong class="langage-web vert-clair">Utilisation
-                                Photoshop</strong>
-                        </p>
-                    </article>
-
-                    <article class="Compétences">
-                        <h3>Compétences acquises lors de la formation : THP</h3>
-                        <p class="texte-competences bleu-clair">Git GitHub</p>
-                        <p class="texte-competences bleu-clair">Langage Ruby</p>
-                        <p class="texte-competences bleu-clair">Navigation en invite de commande sous Linux</p>
-                        <p class="texte-competences bleu-clair">Navigation en invite de commande sous Windows</p>
-                    </article>
-
-                    <article class="Compétences">
-                        <h3>Connaissances informatiques : Curiosité PERSONNELLE</h3>
-
-                        <p class="texte-connaissances gris-clair">Initiation à la sécurité informatique sur RootMe</p>
-                        <p class="texte-connaissances gris-clair">Langage C++</p>
-                        <p class="texte-connaissances gris-clair">Montage vidéo</p>
-                        <p class="texte-connaissances gris-clair">Réalisation d’objets 3D fonctionnels</p>
-                        <p class="texte-connaissances gris-clair">Réalisation de projets Raspberry Pi et Arduino</p>
-                    </article>
                     <p>
-                        Pour découvrir mes projets web : <a href="https://github.com/davidSoutarson" target="_blank"
-                            rel="noopener noreferrer">Mon GitHub: https://github.com/davidSoutarson</a>
+                        <strong>Intégrateur et Développeur Web & Mobile</strong> avec un parcours atypique une
+                        expérience dans la restauration, reconnu pour une
+                        <strong>grande capacité d’adaptation</strong>, une <strong>autonomie</strong> solide et un
+                        <strong>excellent esprit
+                            d’équipe</strong>.
                     </p>
-                    <article class="parcours">
-                        <h2>Parcours professionnel</h2>
+                    <p>
+                        Expert en <strong>scraping de données</strong>, passionné par le <strong>numérique</strong> et
+                        les technologies
+                        <strong>open source</strong>.
+                    </p>
+                    <p>
+                        Sensible à l’<strong>expérience utilisateur (UX)</strong> et au <strong>référencement naturel
+                            (SEO)</strong>, je
+                        conçois des solutions web performantes, accessibles et durables.
+                        Actuellement en formation continue sur frameworks PHP/JS <strong>Laravel</strong> et
+                        <strong>Vue.js</strong>, je
+                        développe activement
+                        mon portfolio <strong>full stack</strong>.
+                    </p>
 
-                        <p>2020 à 2025 : période de formation plus missions en intérim alimentaire</p>
-                        <p>2009 à 2020 : Expérience en hôtellerie restauration</p>
 
-                        <table>
+                    <h3 class="souligner">COMPÉTENCES PROFESSIONNELLES</h3>
 
-                            <caption>
-                                Entreprises et postes marquants de ma carrière
-                            </caption>
-                            <thead>
+                    <ul class="list-normale">
+                        <li><!-- liste de niveuau 1 -->
+                            Compétences techniques :
+                            <ul>
+                                <li> <!-- liste de niveau 2 -->
+                                    Langages : HTML, CSS (Flexbox, Grid, Sass), JavaScript, PHP orienté objet, Ruby, C++
+                                </li>
+                                <li>
+                                    Bases de données : MySQL
+                                </li>
+                                <li>
+                                    Framework / CMS : En cours Laravel (PHP) et Vue.js (JavaScript) – développement de
+                                    mon portfolio
+                                </li>
+                                <li>
+                                    Outils : Git, GitHub, Linux, Photoshop, WordPress
+                                </li> <!-- fin liste de niveau 2 -->
+                            </ul>
+                        </li><!-- fin liste de niveau 1 -->
+                        <li> <!-- liste de niveuau 1 -->
+                            Autres compétences :
+                            <ul>
+                                <li> <!-- liste de niveau 2 -->
+                                    Montage vidéo, objets 3D, Raspberry Pi, Arduino
+                                </li>
+                                <li>
+                                    Sécurité : Initiation CTF (RootMe)
+                                </li>
+                                <li>
+                                    techniques de scraping
+                                </li> <!-- fin liste de niveau 2 -->
+                            </ul>
+                        </li> <!-- fin liste de niveau 1 -->
+                    </ul>
 
-                                <tr>
-                                    <th class="col1 cel">Entreprise</th>
-                                    <th class="col2 cel">Contrat</th>
-                                    <th class="col3 cel">Poste</th>
-                                    <th class="cel">Durée Totale (missions cumulées)</th>
-                                </tr>
-                            </thead>
+                    <h3 class="souligner">PROJET WEB</h3>
 
-                            <tbody>
-                                <tr>
-                                    <td class="col1 cel">Hôtel Saint Joseph</td>
-                                    <td class="col2 cel">Intérim / CDI</td>
-                                    <td class="col3 cel">Maitre d’hôtel Chef de rang Serveur </td>
-                                    <td class="cel">1 an + 6 mois</td>
-                                </tr>
+                    <p>
+                        Portfolio Laravel/Vue.js (en cours)
+                    </p>
+                    <p class="doubleTab">
+                        Conception d’un site personnel avec authentification, back-office, formulaires, API.
+                        Technologies : Laravel, Vue.js, MySQL, GitHub Pages.
+                    </p>
 
-                                <tr>
-                                    <td class="col1 cel">Château de Bagnols</td>
-                                    <td class="col2 cel">Intérim</td>
-                                    <td class="col3 cel">Chef de rang</td>
-                                    <td class="cel">6 mois</td>
-                                </tr>
+                    <p>Formation ESECAD : Projet Hôtel</p>
+                    <p class="doubleTab">
+                        Développement d’un site web de réservation d’hôtels en PHP procédural structuré (MVC simplifié).
+                        Technologies : html,css, php, MySQL, GitHub Pages.
+                    </p>
+                    <p>
+                        Visitez mon GitHub : contenant plus de 50 "Repositorie" projets et exercices realiser tout au
+                        long de ma formation.
+                        <a href="https://github.com/davidSoutarson">github.com/davidSoutarson</a>
+                    </p>
 
-                                <tr>
-                                    <td class="col1 cel">Domo</td>
-                                    <td class="col2 cel">Intérim / CDI</td>
-                                    <td class="col3 cel">Chef de rang</td>
-                                    <td class="cel">1 an</td>
-                                </tr>
+                    <h3 class="souligner">FORMATION</h3>
 
-                                <tr>
-                                    <td class="col1 cel">Bistrot de Lyon</td>
-                                    <td class="col2 cel">Extra</td>
-                                    <td class="col3 cel">Serveur Serveur runner</td>
-                                    <td class="cel">1 an</td>
-                                </tr>
+                    <ul>
+                        <li>2022 – 2025 : Développeur Web – ESECAD</li>
+                        <li>2019 : Développeur Web – The Hacking Project (THP)</li>
+                        <li>2014 – 2015 : DAEU A – Université Lumière Lyon 2</li>
+                        <li>2002 – 2004 : BEP Hôtellerie – Lycée François Mitterrand</li>
+                    </ul>
 
-                                <tr>
-                                    <td class="col1 cel">Radisson Blue</td>
-                                    <td class="col2 cel">Extra</td>
-                                    <td class="col3 cel">Chef de rang</td>
-                                    <td class="cel">1 an</td>
-                                </tr>
+                    <h3 class="souligner">EXPÉRIENCE PROFESSIONNELLE</h3>
 
-                                <tr>
-                                    <td class="col1 cel">Château Perrache</td>
-                                    <td class="col2 cel">Intérim</td>
-                                    <td class="col3 cel">Chef de rang</td>
-                                    <td class="cel">2 ans</td>
-                                </tr>
+                    <dl>
+                        <dt>2020 – 2025 : Formation développement web et intérim</dt>
+                        <dd class="doubleTab">Autonomie, rigueur, capacité à s’auto-former.</dd>
 
-                                <tr>
-                                    <td class="col1 cel">La Tassée</td>
-                                    <td class="col2 cel">Extra / Intérim</td>
-                                    <td class="col3 cel">Serveur Chef de rang</td>
-                                    <td class="cel">1 an</td>
-                                </tr>
+                        <dt>2009 – 2020 : Hôtellerie-Restauration – Serveur, Chef de rang, Maître d’hôtel</dt>
+                        <dd class="doubleTab">Gestion du stress, relation client, travail en équipe.</dd>
+                        <dd class="doubleTab">Établissements : Hôtel Saint Joseph, Château de Bagnols, Radisson Blu,
+                            Château Perrache,
+                            etc.</dd>
+                        <dd class="doubleTab">Communication, organisation, adaptabilité, leadership.</dd>
 
-                                <tr>
-                                    <td class="col1 cel">Pignol</td>
-                                    <td class="col2 cel">Extra / Intérim</td>
-                                    <td class="col3 cel">Serveur Chef de rang</td>
-                                    <td class="cel">1 an</td>
-                                </tr>
+                        <dt>2009 – 2013 : Auto-entrepreneur – Produits artisanaux sur les marchés</dt>
+                        <dd class="doubleTab">Initiative, créativité, gestion de projet, contact client.</dd>
 
-                                <tr>
-                                    <td class="col1 cel">L’Hôtel de Région</td>
-                                    <td class="col2 cel">Intérim</td>
-                                    <td class="col3 cel">Serveur Plongeur</td>
-                                    <td class="cel">2 ans</td>
-                                </tr>
-                            </tbody>
+                        <dt>2007 – 2009 : Militaire – 12e Régiment d’Artillerie d’Haguenau</dt>
+                        <dd class="doubleTab">Discipline, résilience, travail sous pression.</dd>
+                    </dl>
 
-                        </table>
 
-                    </article>
+
                 </section>
 
             </main>
 
-            <!-- Sommaire dynamique à droite -->
             <!-- Sommaire dynamique à droite -->
             <aside class="sommaire-gauche" role="complementary" aria-label="Sommaire latéral">
                 <h2>Sommaire</h2>
@@ -275,33 +203,25 @@
                             <a class="survol_souligner" href="../index.html">Accueil</a>
                         </li>
                         <li>
-                            <a class="survol_souligner" href="a_propos_de_moi.html">À propos de moi</a>
+                            <a class="survol_souligner" href="a-propos.html">À propos de moi</a>
                         </li>
                         <!-- parti 2 -->
-            
-                        <li>
-                            CV
                             <ul class="lateral-sous-menu">
                                 <li>
-                                    <a class="survol_souligner" href="cv.html">CV Graphique</a>
-                                </li>
-                                <li>
-                                    <a class="survol_souligner" href="cv_ats.html">CV ATS</a>
+                                    <a class="survol_souligner" href="cv.html">CV</a>
                                 </li>
             
                             </ul>
-            
-                        </li>
                         <!-- partie 3 -->
                         <li>
                             Compétences & Projets
                             <ul class="lateral-sous-menu">
                                 <li>
-                                    <a class="survol_souligner" href="competenceTecEx.html">Compétences
+                                    <a class="survol_souligner" href="competence.html">Compétences
                                         techniques</a>
                                 </li>
                                 <li>
-                                    <a class="survol_souligner" href="mes_projet.html">Projets</a>
+                                    <a class="survol_souligner" href="projet.html">Projets</a>
                                 </li>
                             </ul>
             
@@ -312,12 +232,13 @@
                         </li>
             
                     </ul>
-                   
+                    
             
                 </nav>
+                
             </aside>
-
-        </div>
+            
+        </div><!-- du div layout -->
 
         <!-- bouton de changemne de page pour un navigation de tipe livre -->
         <div class="carrousel-controls" aria-label="Navigation du livre">
@@ -330,44 +251,28 @@
         <footer>
             <h2>Les technos utiliser pour se projet</h2>
             <ul class="technos-utilise">
-                <li>
-                    HTML5
-                </li>
-                <li>
-                    CSS3
-                </li>
-                <li>
-                    scss
-                </li>
-                <li>
-                    JavaScript
-                </li>
-                <li>
-                <li>
-                    GitHub
-                </li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>scss</li>
+                <li>JavaScript</li>
+                <li>GitHub</li>
             </ul>
 
             <p>© 2025 David Soutarson</p>
-            <button> <a href="#wrapper" class="btn-retour-haut" title="Retour en haut de page">⬆ Retour haut</a> </button>
+            
+            <button id="btn-retour-haut" class="btn-retour-haut" title="Retour en haut de page">
+                ⬆ Retour haut
+            </button>
             
         </footer>
-    </div> <!-- fin du div wraper -->
+    </div>
 
     <!-- <script src="js/carrousel.js"></script> -- Pour gestion page suivante/précédente -->
     <script src="../js/darkMod.js"></script>
-</body>
+    <script src="../js/animations.js"></script>
+    <script src="../js/changerDePage.js"></script>
+    <!-- <script src="../js/boutonDesactiver.js"></script> -->
 
-<!-- 
-    TODO :
-    Ajouter un bouton de retour en haut de page
-    
-    Ajouter un bouton de téléchargement du CV (PDF)
-    
-    Ajouter une animation scroll ou carrousel
-    Optimiser pour mobile (responsive)
-    
-    
-    -->
+</body>
 
 </html>

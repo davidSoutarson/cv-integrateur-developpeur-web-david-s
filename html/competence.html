@@ -18,18 +18,21 @@
 <body>
     <div id="wrapper">
         <header>
-            <h1>Portfolio – David Soutarson, Intégrateur & Développeur Web</h1>
+            <h1> Portfolio David Soutarson Integrateur Développeur Web </h1>
 
             <button id="toggle-theme" aria-label="Activer/désactiver le mode sombre">🌓 Mode sombre</button>
 
             <nav class="navigation-horizontal" aria-label="Menu principal">
                 <ul class="navigation-h">
+                    <!-- partie 1 -->
                     <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="a_propos_de_moi.html">À propos de moi</a></li>
-                    <li><a href="cv.html">CV Graphique</a></li>
-                    <li><a href="cv_ats.html">CV ATS</a></li>
-                    <li><a href="mes_projet.html">Projets</a></li>
-                    <li><a href="competenceTecEx.html">Compétences</a></li>
+                    <li><a href="a-propos.html">À propos de moi</a></li>
+                    <!-- partie 2 -->
+                    <li><a href="cv.html">CV</a></li>
+                    <!-- partie 3 -->
+                    <li><a href="projet.html">Projets</a></li>
+                    <li><a href="competence.html">Compétences</a></li>
+                    <!-- partie 4 -->
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -140,26 +143,6 @@
                         </ol>
                     </article>
 
-                  <!--   <article id="ruby" class="bloc-article"  tabindex="0">
-                        <h3>Ruby on Rails</h3>
-                        <p>Compétences acquises durant ma formation :</p>
-                        <ul>
-                            <li>Architecture MVC</li>
-                            <li>Routage et contrôleurs</li>
-                            <li>Modèles et ActiveRecord</li>
-                            <li>Vues avec Embedded Ruby (ERB)</li>
-                            <li>Scaffolds et migrations de base de données</li>
-                        </ul>
-                        <h4>Voici 5 exemples :</h4>
-                        <ol>
-                            <li>Application CRUD avec Rails</li>
-                            <li>Gestion utilisateurs avec Devise</li>
-                            <li>Blog avec commentaires</li>
-                            <li>API simple avec Rails</li>
-                            <li>Application ToDo en MVC</li>
-                        </ol>
-                    </article> -->
-
                 <article id="outils" class="bloc-article" tabindex="0">
                     <h3>Outils & Méthodologies</h3>
                     <p>Compétences acquises durant ma formation, notamment au sein du bootcamp <strong>The Hacking Project
@@ -194,25 +177,23 @@
                 <nav class="lateral-col" aria-label="Menu latéral dynamique">
                     <ul class="lateral-menu">
                         <li><a class="survol_souligner" href="../index.html">Accueil</a></li>
-                        <li><a class="survol_souligner" href="a_propos_de_moi.html">À propos de moi</a></li>
-                        <li>
-                            CV
-                            <ul class="lateral-sous-menu">
-                                <li><a class="survol_souligner" href="cv.html">CV Graphique</a></li>
-                                <li><a class="survol_souligner" href="cv_ats.html">CV ATS</a></li>
-                            </ul>
-                        </li>
+                        <li><a class="survol_souligner" href="a-propos.html">À propos de moi</a></li>
+                        <!-- partie 2 -->
+                        <ul class="lateral-sous-menu">
+                            <li><a class="survol_souligner" href="cv.html">CV</a></li>
+                        </ul>
+                        <!-- partie 3 -->
                         <li>
                             Compétences & Projets
                             <ul class="lateral-sous-menu">
-                                <li><a class="survol_souligner" href="competenceTecEx.html">Compétences techniques</a></li>
+                                <li><a class="survol_souligner" href="competence.html">Compétences techniques</a></li>
                                 <li><a class="survol_souligner" href="#a-propos"> - Présentation</a></li>
                                 <li><a class="survol_souligner" href="#html-css"> - HTML & CSS</a></li>
                                 <li><a class="survol_souligner" href="#javascript"> - JavaScript</a></li>
                                 <li><a class="survol_souligner" href="#php-mysql"> - PHP & MySQL</a></li>
                                <!--  <li><a class="survol_souligner" href="#ruby"> - Ruby on Rails</a></li> -->
                                 <li><a class="survol_souligner" href="#outils"> - Outils & Méthodologies</a></li>
-                                <li><a class="survol_souligner" href="mes_projet.html">Projets</a></li>
+                                <li><a class="survol_souligner" href="projet.html">Projets</a></li>
                             </ul>
                             
                         </li>
@@ -241,11 +222,17 @@
             </ul>
 
             <p>© 2025 David Soutarson</p>
-            <a href="#wrapper" class="btn-retour-haut" title="Retour en haut de page">⬆ Retour haut</a>
+
+            <button id="btn-retour-haut" class="btn-retour-haut" title="Retour en haut de page">
+                ⬆ Retour haut
+            </button>
         </footer>
     </div>
 
     <script src="../js/darkMod.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/changerDePage.js"></script>
+    <!-- <script src="../js/boutonDesactiver.js"></script> -->
 </body>
 
 </html>
