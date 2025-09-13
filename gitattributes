@@ -1,0 +1,14 @@
+# Forcer la détection du JavaScript
+js/*.js linguist-language=JavaScript
+
+# Forcer la détection du SCSS
+scss/*.scss linguist-language=SCSS
+
+# Forcer la détection du HTML
+*.html linguist-language=HTML
+
+# Ignorer certains dossiers qui faussent le calcul
+node_modules/* linguist-vendored
+dist/* linguist-vendored
+build/* linguist-vendored
+*.min.js linguist-vendored
