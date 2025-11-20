@@ -137,6 +137,7 @@ a {
 
 #toggle-theme {
     @include bouton-principal($fond-secondaire, $texte-principal);
+    margin: 20px;
 }
 
 body.dark {
