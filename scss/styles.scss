@@ -1,5 +1,5 @@
 // =======================================================
-// 🎨 Variables globales
+// Variables globales
 // =======================================================
 
 // Couleurs principales
@@ -13,6 +13,7 @@ $couleur-soulignement: rgba(52, 152, 219, 0.6);
 $fond-principal: rgba(255, 255, 255, 1);
 $fond-secondaire: rgba(245, 245, 245, 1);
 $fond-noir: rgba(18, 18, 18, 1);
+$fond-beige: rgb(182, 162, 141);
 $fond-secondaire-noir: rgba(50, 50, 50, 1);
 $menu-lateral-fond: rgb(33, 33, 33);
 
@@ -37,13 +38,13 @@ $texte-secondaire-tres-claire: color.scale($texte-secondaire, $lightness: 30%);
 $fond-noir-claire: color.scale($fond-noir, $lightness: 10%);
 
 // =======================================================
-// 🔹 Mixins réutilisables
+// Mixins réutilisables
 // =======================================================
 
 @mixin bouton-principal($bg: $couleur-principale, $color: white) {
     background-color: $bg;
     color: $color;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 0.5rem;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -65,12 +66,12 @@ $fond-noir-claire: color.scale($fond-noir, $lightness: 10%);
     background-color: $fond-secondaire;
     border-bottom: 2px double $border-color;
     border-right: 2px double $border-color;
-    z-index: -1;
+    z-index: -2;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 // =======================================================
-// 🔹 Reset CSS
+// Reset CSS
 // =======================================================
 
 * {
@@ -81,13 +82,14 @@ $fond-noir-claire: color.scale($fond-noir, $lightness: 10%);
 }
 
 // =======================================================
-// 🔹 Styles globaux
+// Styles globaux
 // =======================================================
 
 body {
-    background-image: url(../images/boisDeSapin.PNG);
+    background-image: url(../images/textureCircuitElectroTranparen.png);
+    background-color: $fond-beige;
     font-family: Arial, sans-serif;
-    background-color: $fond-principal;
+    /* background-color: $fond-principal; */
 }
 
 address,
@@ -131,21 +133,64 @@ a {
     margin: 0.5em 0 0.5em 4em;
 }
 
+
+
 // =======================================================
-// 🔹 Mode sombre
+// Wrapper & Layout
 // =======================================================
 
-#toggle-theme {
-    @include bouton-principal($fond-secondaire, $texte-principal);
-    margin: 20px;
+#wrapper {
+    width: 95%;
+    margin: 0 auto;
 }
 
+header {
+    margin-bottom: 0.5em;
+
+    .logo-header {
+        width: 200px;
+        height: auto;
+        border-radius: 5%;
+        display: block;
+    }  
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-top: 5px;
+}
+
+.header-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    align-items: center
+}
+
+// =======================================================
+// Mode sombre
+// =======================================================
+
+//bouton mode sombre
+#toggle-theme {
+    @include bouton-principal($fond-secondaire, $texte-principal);
+     margin-right: 5%; 
+}
+
+// =======================================================
+// Contien les Modification du Mode sombre
+// =======================================================
+
 body.dark {
-    background-image: none;
+    background-image: url(../images/textureCircuitElectroTranparen.png);
     background-color: $fond-noir;
     color: #f5f5f5;
 
-    .contenu, #a-propos {
+    // 🔹 Mode sombre
+    .contenu,
+    #a-propos {
         background-color: $fond-secondaire-noir;
         border-color: $blanc-tres-claire;
 
@@ -167,10 +212,9 @@ body.dark {
                 text-decoration: underline;
             }
         }
-
-        
     }
 
+    // Mode sombre
     .sommaire-gauche {
         background-color: $fond-noir-claire;
         color: #f5f5f5;
@@ -180,6 +224,7 @@ body.dark {
         }
     }
 
+    //Mode sombre
     .bloc-article {
         background-color: $fond-secondaire-noir;
         border: 1px solid $fond-noir-claire;
@@ -198,38 +243,11 @@ body.dark {
     }
 }
 
+//====== fin mode sombre ======================================
+
 // =======================================================
-// 🔹 Wrapper & Layout
+// Navigation horizontale    
 // =======================================================
-
-#wrapper {
-    width: 90%;
-    margin: 0 auto;
-}
-
-header {
-    margin-bottom: 1em;
-
-    .logo-header {
-        width: 200px;
-        height: auto;
-        border-radius: 5%;
-        display: block;
-        /* margin: 0 auto 1em auto; */
-    }
-   
-
-    h1 {
-        margin-bottom: 1em;
-    }
-}
-
-.header-top {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    margin: 15px 0;
-}
 
 .navigation-horizontal {
     display: flex;
@@ -246,15 +264,18 @@ header {
     }
 }
 
+// =======================================================
+// Layout principal
+// =======================================================
+
 .layout {
     display: flex;
     flex-direction: row-reverse;
-    margin: 2.5em 0 1em 0;
     justify-content: center;
 }
 
 // =======================================================
-// 🔹 Contenu principal
+// Contenu principal
 // =======================================================
 
 .contenu {
@@ -265,8 +286,7 @@ header {
     border-bottom: 2px solid $texte-secondaire;
     border-right: 2px solid $texte-secondaire;
     padding: 1em;
-    margin-right: 1em;
-    z-index: 1;
+    z-index: -2;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 
     &::before {
@@ -320,9 +340,13 @@ header {
     background-color: $menu-lateral-fond;
     color: $menu-texte;
     width: 20%;
-    margin-right: 1em;
+   border-right:2em solid transparent; 
+   border-image-source:url("../images/SpiraleBordure2.PNG");
+   border-image-slice: 100;
+   border-image-repeat: repeat;
 
     .lateral-col {
+        margin-left: 1.5em;
         display: flex;
         flex-direction: column;
         position: sticky;
@@ -330,6 +354,7 @@ header {
 
         .lateral-menu,
         .lateral-sous-menu {
+           
             list-style: none;
             display: inline;
 
@@ -355,7 +380,7 @@ header {
 }
 
 // =======================================================
-// 🔹 Bouton retour haut
+// Bouton retour haut
 // =======================================================
 
 .btn-retour-haut {
@@ -367,7 +392,7 @@ header {
 }
 
 // =======================================================
-// 🔹 Articles
+// Articles
 // =======================================================
 
 .bloc-article {
@@ -397,14 +422,14 @@ header {
 }
 
 // =======================================================
-// 🔹 Carrousel
+// Carrousel
 // =======================================================
 
 .carrousel-controls {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    margin-bottom: 1em;
+    margin: 0.5em;
 
     .carrousel-boutons {
         display: flex;
@@ -419,8 +444,126 @@ header {
     }
 }
 
+
 // =======================================================
-// 🔹 Media Queries
+// Galerie projets
+// =======================================================
+
+.galerie-projet {
+    border: 2px solid $texte-secondaire;
+    border-radius: 8px;
+    padding: 0.5em;
+}
+
+.boxImage {
+    display: flex;
+    position: relative; // nécessaire pour positionner le message
+
+    &:hover {
+        box-shadow: 5px 5px 5px $texte-secondaire;
+
+        .description {
+            color: $texte-principal;
+        }
+
+        .message-zoom {
+            opacity: 1;
+        }
+    }
+
+    .message-zoom {
+        position: absolute;
+        bottom: 25%;
+        left: 30%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: $couleur-secondaire;
+        padding: 0.2em 0.5em;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+}
+
+.imageProjet {
+    display: block;
+    width: 45%;
+    margin: 0.5em;
+    border-bottom: 2px solid $texte-secondaire;
+    border-right: 2px solid $texte-secondaire;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 5px 5px 5px $texte-secondaire;
+    }
+
+    &.agrandie {
+        transform: scale(3.5);
+        z-index: 1000;
+        position: relative;
+        box-shadow: none;
+    }
+}
+
+.shifoumi {
+    width: 30%;
+}
+
+
+
+
+#contact {
+    margin: 1em;
+    width: 100%;
+}
+
+.formulaire-contact{
+    
+    
+    fieldset{
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: 1em;
+        border: 1px solid $gris-clair;
+        border-radius: 8px;
+        padding: 1em;
+    } 
+}
+
+// =======================================================
+// Footer
+
+.technos-utilise{
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0;
+    
+}
+
+.listDetechno{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    background-color: $ombre-legere;
+    
+}
+
+.logoLangageWeb{
+    width: 40px;
+    height: 30px;
+    margin: 0 0.5em;
+}
+
+// =======================================================
+// Fin des styles globaux
+
+// =======================================================
+// Media Queries
 // =======================================================
 
 @media (min-width: 1024px) {
@@ -526,77 +669,7 @@ header {
         padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
     }
-}
 
-// =======================================================
-// 🔹 Galerie projets
-// =======================================================
-
-.galerie-projet {
-    border: 2px solid $texte-secondaire;
-    border-radius: 8px;
-    padding: 0.5em;
-}
-
-.boxImage {
-    display: flex;
-    position: relative; // nécessaire pour positionner le message
-
-    &:hover {
-        box-shadow: 5px 5px 5px $texte-secondaire;
-
-        .description {
-            color: $texte-principal;
-        }
-
-        .message-zoom {
-            opacity: 1;
-        }
-    }
-
-    .message-zoom {
-        position: absolute;
-        bottom: 25%;
-        left: 30%;
-        transform: translateX(-50%);
-        background-color: rgba(0, 0, 0, 0.7);
-        color: $couleur-secondaire;
-        padding: 0.2em 0.5em;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-}
-
-.imageProjet {
-    display: block;
-    width: 45%;
-    margin: 0.5em;
-    border-bottom: 2px solid $texte-secondaire;
-    border-right: 2px solid $texte-secondaire;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-
-    &:hover {
-        box-shadow: 5px 5px 5px $texte-secondaire;
-    }
-
-    &.agrandie {
-        transform: scale(3.5);
-        z-index: 1000;
-        position: relative;
-        box-shadow: none;
-    }
-}
-
-.shifoumi {
-    width: 30%;
-}
-
-
-@media (max-width: 830px) {
     .galerie-projet {
         padding: 0.3em;
         border-width: 1px;
@@ -626,41 +699,3 @@ header {
         }
     }
 }
-
-#contact {
-    margin: 1em;
-    width: 100%;
-}
-
-.formulaire-contact{
-    
-    
-    fieldset{
-        margin: 0px auto;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        margin-bottom: 1em;
-        border: 1px solid $gris-clair;
-        border-radius: 8px;
-        padding: 1em;
-    } 
-}
-
-// =======================================================
-// 🔹 Footer
-
-.technos-utilise{
-    display: flex;
-    align-items: center;
-    margin: 1em 0;
-}
-
-.logoLangageWeb{
-    width: 40px;
-    height: 30px;
-    margin: 0 0.5em;
-}
-
-// =======================================================
-// 🔹 Fin du fichier

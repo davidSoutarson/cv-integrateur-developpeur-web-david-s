@@ -13,6 +13,7 @@
         content="Découvrez mon profil, mes formations et compétences techniques en développement web.">
     <meta property="og:url" content="https://tonsite.fr/cv.html">
     <meta property="og:type" content="website">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 </head>
 
 <body>
@@ -20,26 +21,25 @@
         <header>
             <div class="header-top">
                 <img src="../images/logoDavid.JPG" alt="logo de David Soutarson" class="logo-header">
-            <h1 class="tire-site"> Intégrateur Développeur Web Portfolio de David Soutarson </h1>
+                <h1 class="titre-site" > Intégrateur & Développeur Web &mdash; Portfolio de David Soutarson </h1>
             </div>
+            
+            <div class="header-controls">
+            <!-- Bouton = hors de la nav -->
+                <button id="toggle-theme" aria-label="Activer/désactiver le mode sombre">🌓 Mode sombre</button>
 
-            <button id="toggle-theme" aria-label="Activer/désactiver le mode sombre">🌓 Mode sombre</button>
-
-            <!-- partie a inclure en php -->
-            <nav class="navigation-horizontal" aria-label="Menu principal">
-                <ul class="navigation-h">
-                    <!-- partie 1 -->
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="a-propos.html">À propos de moi</a></li>
-                    <!-- partie 2 -->
-                    <li><a href="cv.html">CV</a></li>
-                    <!-- partie 3 -->
-                    <li><a href="projet.html">Projets</a></li>
-                    <li><a href="competence.html">Compétences</a></li>
-                    <!-- partie 4 -->
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+                <!-- Navigation -->
+                <nav class="navigation-horizontal" role="navigation" aria-label="Menu principal horizontal">
+                    <ul class="navigation-h">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="a-propos.html">À propos de moi</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="projet.html">Projets</a></li>
+                        <li><a href="competence.html">Compétences</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <div class="layout">
@@ -74,7 +74,6 @@
                             <li>HTML5 & CSS3</li>
                             <li>JavaScript (ES6+)</li>
                             <li>PHP & MySQL</li>
-                            <!-- <li>Ruby on Rails</li> -->
                             <li>Git & GitHub</li>
                             <li>Responsive Design</li>
                             <li>SEO de base</li>
@@ -98,7 +97,7 @@
                             <li>Grille CSS avec Flexbox/Grid</li>
                             <li>Animation hover pour boutons</li>
                             <li>Transformation d’une maquette en site HTML/CSS</li>
-                            <li>Page respectant les standards WCAG</li>
+                            <li>Page respectant les standards WCAG 2.1</li>
                         </ol>
                     </article>
 
@@ -173,13 +172,17 @@
             <aside class="sommaire-gauche" role="complementary" aria-label="Sommaire latéral">
                 <h2>Sommaire</h2>
                 <nav class="lateral-col" aria-label="Menu latéral dynamique">
-                    <ul class="lateral-menu">
+
+                    <ul class="lateral-menu" aria-label="Menu">
                         <li><a class="survol_souligner" href="../index.html">Accueil</a></li>
                         <li><a class="survol_souligner" href="a-propos.html">À propos de moi</a></li>
                         <!-- partie 2 -->
+                        <li>
+                            CV
                         <ul class="lateral-sous-menu">
-                            <li><a class="survol_souligner" href="cv.html">CV</a></li>
+                            <li><a class="survol_souligner" href="cv.html">Mon CV</a></li>
                         </ul>
+                        </li>
                         <!-- partie 3 -->
                         <li>
                             Compétences & Projets
@@ -189,14 +192,14 @@
                                 <li><a class="survol_souligner" href="#html-css"> - HTML & CSS</a></li>
                                 <li><a class="survol_souligner" href="#javascript"> - JavaScript</a></li>
                                 <li><a class="survol_souligner" href="#php-mysql"> - PHP & MySQL</a></li>
-                               <!--  <li><a class="survol_souligner" href="#ruby"> - Ruby on Rails</a></li> -->
                                 <li><a class="survol_souligner" href="#outils"> - Outils & Méthodologies</a></li>
                                 <li><a class="survol_souligner" href="projet.html">Projets</a></li>
-                            </ul>
-                            
+                            </ul>  
                         </li>
+                        <!-- partie 4 -->
                         <li><a class="survol_souligner" href="contact.html">Contact</a></li>
                     </ul>
+
                 </nav>
             </aside>
         </div>
