@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +7,10 @@
 }
 
 body {
-  background-image: url(../images/textureCircuitElectroTranparen.png);
-  background-color: rgb(182, 162, 141);
+  background-image: url(../images/textureCircuitImprimé.png); /* Image de fond subtile */
+  background-repeat: repeat; /* répète l’image dans les deux directions */
+  background-color: rgb(173, 159, 148);
   font-family: Arial, sans-serif;
-  /* background-color: $fond-principal; */
 }
 
 address,
@@ -93,7 +94,7 @@ header .logo-header {
 }
 
 body.dark {
-  background-image: url(../images/textureCircuitElectroTranparen.png);
+  background-image: url(../images/textureCircuitImprimé.png);
   background-color: rgb(18, 18, 18);
   color: #f5f5f5;
 }
@@ -148,17 +149,27 @@ body.dark .sommaire-gauche {
 body.dark .sommaire-gauche .survol_souligner:hover {
   color: rgb(52, 152, 219);
 }
-body.dark .bloc-article {
+body.dark .bloc-article,
+body.dark #contact,
+body.dark .bloc-contact {
   background-color: rgb(50, 50, 50);
   border: 1px solid rgb(41.7, 41.7, 41.7);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 body.dark .bloc-article h3,
 body.dark .bloc-article p,
-body.dark .bloc-article li {
+body.dark .bloc-article li,
+body.dark #contact h3,
+body.dark #contact p,
+body.dark #contact li,
+body.dark .bloc-contact h3,
+body.dark .bloc-contact p,
+body.dark .bloc-contact li {
   color: #f5f5f5;
 }
-body.dark .bloc-article:hover {
+body.dark .bloc-article:hover,
+body.dark #contact:hover,
+body.dark .bloc-contact:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
   transform: translateY(-3px);
 }
@@ -200,7 +211,7 @@ body.dark .bloc-article:hover {
   border-bottom: 2px solid rgba(100, 100, 100, 0.7);
   border-right: 2px solid rgba(100, 100, 100, 0.7);
   padding: 1em;
-  z-index: -2;
+  z-index: 1;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
 .contenu::before {
@@ -265,6 +276,7 @@ body.dark .bloc-article:hover {
   border-image-source: url("../images/SpiraleBordure2.PNG");
   border-image-slice: 100;
   border-image-repeat: repeat;
+  z-index: 1;
 }
 .sommaire-gauche .lateral-col {
   margin-left: 1.5em;
@@ -372,16 +384,16 @@ body.dark .bloc-article:hover {
 
 .boxImage {
   display: flex;
-  position: relative;
+  position: relative; /* nécessaire pour positionner le message */
 }
-.boxImage:hover {
+.boxImage:hover { /* Survol de la boxImage */
   box-shadow: 5px 5px 5px rgba(100, 100, 100, 0.7);
 }
 .boxImage:hover .description {
   color: rgba(33, 33, 33, 0.9);
 }
 .boxImage:hover .message-zoom {
-  opacity: 1;
+  opacity: 1; /* rendu visible au survol */
 }
 .boxImage .message-zoom {
   position: absolute;
@@ -395,7 +407,7 @@ body.dark .bloc-article:hover {
   font-size: 0.8rem;
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none;
+  pointer-events: none; /* évite que le texte bloque le hover */
 }
 
 .imageProjet {
@@ -422,8 +434,19 @@ body.dark .bloc-article:hover {
 }
 
 #contact {
+  display: flex;
   margin: 1em;
   width: 100%;
+  height: 70%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#contact .bloc-contact {
+  display: flex;
+  margin-bottom: 1em;
+  flex-direction: column;
+  align-items: center;
 }
 
 .formulaire-contact fieldset {
